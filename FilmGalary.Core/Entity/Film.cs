@@ -1,4 +1,4 @@
-﻿namespace FilmGalary.Core
+﻿namespace FilmGalary.Core.Entity
 {
     public class Film
     {
@@ -6,8 +6,8 @@
         public string Title { get; set; } = "";
         public double Rating { get; set; } = 0.0;
         public int Year_release { get; set; } = 0000;
-        public FilmType Type { get; set; };
-        //public Genre Genre { get; set; }
+        public FilmType Type { get; set; } = FilmType.No_data;
+        public List<Genre> Genre { get; set; } = new List<Genre>();
         public Director Director { get; set; } = new Director();
         public Country Country { get; set; } = new Country();
         public bool Is_watched { get; set; } = false;
@@ -25,12 +25,16 @@
     {
         Series,
         Cinema,
+        Cartoon,
+        Animated_series,
+        No_data,
     }
 
     public enum Genre
     {
         Horror,
         Action,
+        Comedy,
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using FilmGalary.Core;
+using FilmGalary.Core.Entity;
 
 public class FilmGalaryDataSource
 {
