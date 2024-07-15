@@ -29,19 +29,23 @@ country1.Title = "Россия";
 //Console.WriteLine(File.ReadAllText(path));
 
 
-FilmGalaryDataSource filmGalaryDataSource = new FilmGalaryDataSource();
-filmGalaryDataSource.Write(new List<Film> { film, film2, film3 });
-Console.WriteLine(string.Join("\n", filmGalaryDataSource.Get()));
+//FilmGalaryDataSource filmGalaryDataSource = new FilmGalaryDataSource();
+//filmGalaryDataSource.Write(new List<Film> { film, film2, film3 });
+//Console.WriteLine(string.Join("\n", filmGalaryDataSource.Get()));
 
 
-ActorDataSource actorDataSource = new ActorDataSource();
-actorDataSource.Write(new List<Actor> { actor1, actor2 });
-Console.WriteLine(string.Join("\n", actorDataSource.Get()));
+//ActorDataSource actorDataSource = new ActorDataSource();
+//actorDataSource.Write(new List<Actor> { actor1, actor2 });
+//Console.WriteLine(string.Join("\n", actorDataSource.Get()));
 
-CountryDataSource countryDataSource = new CountryDataSource();
-countryDataSource.Write(new List<Country> { country1, country2 });
-Console.WriteLine(string.Join("\n", countryDataSource.Get()));
+//CountryDataSource countryDataSource = new CountryDataSource();
+//countryDataSource.Write(new List<Country> { country1, country2 });
+//Console.WriteLine(string.Join("\n", countryDataSource.Get()));
 
 
-FilmService dataService = new FilmService(new FilmGalaryDataSource());
+//FilmService dataService = new FilmService(new FilmGalaryDataSource());
+
+
+// Проверка операций CRUD для модели Film
+
 

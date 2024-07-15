@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmGalary.Integrarion", "FilmGalary.Integrarion\FilmGalary.Integrarion.csproj", "{E4A4F7A9-13C0-4731-86ED-EBDD3EE31FB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmGalary.Integrarion", "FilmGalary.Integrarion\FilmGalary.Integrarion.csproj", "{E4A4F7A9-13C0-4731-86ED-EBDD3EE31FB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmGalary.Core", "FilmGalary.Core\FilmGalary.Core.csproj", "{7F3A0B9A-615F-48DA-87BF-491B9CF0A713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmGalary.Core", "FilmGalary.Core\FilmGalary.Core.csproj", "{7F3A0B9A-615F-48DA-87BF-491B9CF0A713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmGalary.App", "FilmGalary.App\FilmGalary.App.csproj", "{237D95FA-8098-4B71-8A15-A9EB337377E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7F3A0B9A-615F-48DA-87BF-491B9CF0A713}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F3A0B9A-615F-48DA-87BF-491B9CF0A713}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F3A0B9A-615F-48DA-87BF-491B9CF0A713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{237D95FA-8098-4B71-8A15-A9EB337377E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{237D95FA-8098-4B71-8A15-A9EB337377E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{237D95FA-8098-4B71-8A15-A9EB337377E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{237D95FA-8098-4B71-8A15-A9EB337377E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

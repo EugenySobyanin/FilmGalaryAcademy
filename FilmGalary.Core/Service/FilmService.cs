@@ -17,9 +17,10 @@ namespace FilmGalary.Core.Service
             _films = _dataSource.Get();
         }
 
+        
         public List<Film> GetAll()
         {
-            return _dataSource.Get();
+            return _dataSource.Get() ?? new List<Film>();
         }
 
         public Film Get(int id)
@@ -49,7 +50,12 @@ namespace FilmGalary.Core.Service
             foreach (Film film in _films)
             {
                 if (film.Id == id)
+                {
                     _films.Remove(film);
+                    break;
+                }
+                    
+                
             }
             _dataSource.Write(_films);
 
