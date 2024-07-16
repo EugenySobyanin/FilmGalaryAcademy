@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FilmGalary.Core.Entity;
+using FilmGalary.Core.Utils;
 
 namespace FilmGalary.Core.Data
 {

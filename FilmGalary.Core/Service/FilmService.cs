@@ -14,13 +14,13 @@ namespace FilmGalary.Core.Service
         public FilmService(FilmGalaryDataSource dataSource)
         {
             _dataSource = dataSource;
-            _films = _dataSource.Get();
+            _films = _dataSource.Get() ?? new List<Film>();
         }
 
         
         public List<Film> GetAll()
         {
-            return _dataSource.Get() ?? new List<Film>();
+            return _films;
         }
 
         public Film Get(int id)

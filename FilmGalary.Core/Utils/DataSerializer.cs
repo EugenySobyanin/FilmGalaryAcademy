@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Diagnostics.CodeAnalysis;
 
-namespace FilmGalary.Core
+namespace FilmGalary.Core.Utils
 {
     public static class DataSerializer
     {

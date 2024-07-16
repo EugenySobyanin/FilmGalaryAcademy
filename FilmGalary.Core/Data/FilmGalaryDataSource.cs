@@ -1,9 +1,10 @@
-﻿using FilmGalary.Core;
-using FilmGalary.Core.Entity;
+﻿using FilmGalary.Core.Entity;
+using FilmGalary.Core.Utils;
+
 
 public class FilmGalaryDataSource
 {
-    private readonly string path = ".\\data.json";
+    private readonly string path = ".\\film_data.json";
 
     public List<Film> Get()
     {

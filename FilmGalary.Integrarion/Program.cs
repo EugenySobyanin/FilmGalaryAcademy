@@ -2,50 +2,36 @@
 using FilmGalary.Core.Entity;
 using FilmGalary.Core.Service;
 
-Film film = new Film();
-film.Title = "Пираты карибского моря.";
-Film film2 = new Film();
-film2.Title = "Пираты карибского моря - 2.";
-Film film3 = new Film();
-film3.Title = "Пираты карибского моря - 3.";
-
-
-Actor actor1 = new Actor("Джони Депп");
-Actor actor2 = new Actor("Джон Траволта");
-
-
-Country country1 = new Country();
-country1.Title = "Великобритания";
-Country country2 = new Country();
-country1.Title = "Россия";
-//Console.WriteLine(film.ToString());
-
-//string path = ".\\FilmGalary_Integration.json";
-
-//string text = "qwerty";
-
-//File.WriteAllText(path, text);
-
-//Console.WriteLine(File.ReadAllText(path));
-
-
-//FilmGalaryDataSource filmGalaryDataSource = new FilmGalaryDataSource();
-//filmGalaryDataSource.Write(new List<Film> { film, film2, film3 });
-//Console.WriteLine(string.Join("\n", filmGalaryDataSource.Get()));
-
-
-//ActorDataSource actorDataSource = new ActorDataSource();
-//actorDataSource.Write(new List<Actor> { actor1, actor2 });
-//Console.WriteLine(string.Join("\n", actorDataSource.Get()));
-
-//CountryDataSource countryDataSource = new CountryDataSource();
-//countryDataSource.Write(new List<Country> { country1, country2 });
-//Console.WriteLine(string.Join("\n", countryDataSource.Get()));
-
-
-//FilmService dataService = new FilmService(new FilmGalaryDataSource());
+// Создаем экземпляр класса FilmService
+FilmService dataService = new FilmService(new FilmGalaryDataSource());
 
 
 // Проверка операций CRUD для модели Film
+
+// Получение всех фильмов (из пустого файла)
+Console.WriteLine(string.Join(", ", dataService.GetAll()));
+
+// Добавление 3 фильмов по одному
+Console.WriteLine("Добавляем 3 фильма.");
+dataService.Create(new Film(0, "Аватар"));
+dataService.Create(new Film(1, "Кинг-конг"));
+dataService.Create(new Film(2, "Трон"));
+Console.WriteLine(string.Join(", ", dataService.GetAll()));
+
+// Получаем фильм по id
+Console.WriteLine("Получаем фильм по id");
+Console.WriteLine(dataService.Get(2));
+
+// Редактируем фильм по id
+Console.WriteLine("Редактируем фильм");
+dataService.Update(new Film(1, "Мстители"));
+Console.WriteLine(string.Join(", ", dataService.GetAll()));
+
+// Удаляем фильм по id
+dataService.Delete(2);
+Console.WriteLine(string.Join(", ", dataService.GetAll()));
+
+
+
 
 

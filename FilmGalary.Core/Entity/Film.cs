@@ -1,9 +1,9 @@
 ﻿namespace FilmGalary.Core.Entity
 {
-    public class Film
+    public class Film(int id = 0, string title="Some film")
     {
-        public int Id { get; set; } = 0;
-        public string Title { get; set; } = "";
+        public int Id { get; set; } = id;
+        public string Title { get; set; } = title;
         public double Rating { get; set; } = 0.0;
         public int Year_release { get; set; } = 0000;
         public FilmType Type { get; set; } = FilmType.No_data;
