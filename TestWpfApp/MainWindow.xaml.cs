@@ -19,16 +19,11 @@ namespace TestWpfApp
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string text = textBox1.Text;
-            if (text != "")
-            {
-                MessageBox.Show(text);
-            }
-        }
+       
+
 
     }
 }
