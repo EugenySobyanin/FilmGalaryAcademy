@@ -5,16 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ScrollViewer>
-            <StackPanel>
-                <Button MinHeight="60" Background="Red"/>
-                <Button MinHeight="60" Background="Orange"/>
-                <Button MinHeight="60" Background="Yellow"/>
-                <Button MinHeight="60" Background="Green"/>
-                <Button MinHeight="60" Background="Blue"/>
-            </StackPanel>
-        </ScrollViewer>
+        Title="Тестовый вариант приложения" Height="800" Width="1200">
+    <Grid Background="Black">
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>-->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <TabControl>
+                <TabItem x:Name="watchedTab" Width="120" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Height="10" Width="10" Fill="Black" />
+                            <TextBlock Margin="3">Просмотренные</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        Контент-контент-контент
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem x:Name="planTab" Width="120" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Height="10" Width="10" Fill="Black" />
+                            <TextBlock Margin="3">Планируемые</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        Контент-контент-контент
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem x:Name="recomendationTab" Width="120" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Height="10" Width="10" Fill="Black" />
+                            <TextBlock Margin="3">Рекомендации</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        Контент-контент-контент
+                    </TabItem.Content>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
     </Grid>
 </Window>
+
+        
+
+

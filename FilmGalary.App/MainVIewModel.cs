@@ -11,7 +11,8 @@ namespace FilmGalary.App
     internal class MainVIewModel : ObservableObject
     {
 
-        private string _input = string.Empty; public string Input
+        private string _input = string.Empty; 
+        public string Input
         {
             get => _input; set
             {
@@ -19,7 +20,8 @@ namespace FilmGalary.App
             }
         }
 
-        private string _output = string.Empty; public string Output
+        private string _output = string.Empty; 
+        public string Output
         {
             get => _output;
             set

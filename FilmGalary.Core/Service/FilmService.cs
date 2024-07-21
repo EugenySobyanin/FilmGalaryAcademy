@@ -11,17 +11,18 @@ namespace FilmGalary.Core.Service
     {
         private FilmGalaryDataSource _dataSource;
         private List<Film> _films = []; 
-        public FilmService(FilmGalaryDataSource dataSource)
+        public FilmService(FilmGalaryDataSource dataSource) // конструктор
         {
             _dataSource = dataSource;
-            _films = _dataSource.Get() ?? new List<Film>();
+            _films = _dataSource.Get() ?? new List<Film>(); // получаем все фильмы из файла
         }
 
         
-        public List<Film> GetAll()
+        public List<Film> GetAll() 
         {
             return _films;
         }
+
 
         public Film Get(int id)
         {
@@ -37,11 +38,11 @@ namespace FilmGalary.Core.Service
             return null;
         }
 
+
         public void Create(Film film)
         {
             _films.Add(film);
             _dataSource.Write(_films);
-
         }
 
 
@@ -53,12 +54,9 @@ namespace FilmGalary.Core.Service
                 {
                     _films.Remove(film);
                     break;
-                }
-                    
-                
+                }             
             }
             _dataSource.Write(_films);
-
         }
 
 
@@ -71,7 +69,6 @@ namespace FilmGalary.Core.Service
                 }
             }
             _dataSource.Write(_films);
-
         }
 
 
