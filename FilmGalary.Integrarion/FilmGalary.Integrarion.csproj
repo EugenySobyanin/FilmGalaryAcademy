@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FilmGalary.App\FilmGalary.App.csproj" />
     <ProjectReference Include="..\FilmGalary.Core\FilmGalary.Core.csproj" />
+    <ProjectReference Include="..\TestWpfApp\TestWpfApp.csproj" />
   </ItemGroup>
 
 </Project>

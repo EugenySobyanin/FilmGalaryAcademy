@@ -1,4 +1,4 @@
-﻿using FilmGalart.App;
+﻿using FilmGalary.App;
 using FilmGalart.App.Core;
 using System;
 using System.Collections.Generic;

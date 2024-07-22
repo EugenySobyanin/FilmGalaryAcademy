@@ -13,33 +13,44 @@
         </Grid.RowDefinitions>-->
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" >
             <TabControl>
-                <TabItem x:Name="watchedTab" Width="120" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                <TabItem x:Name="watchedTab" Width="150" Height="50" Background="#32CD32" Margin="0 0 10 0">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Ellipse Height="10" Width="10" Fill="Black" />
-                            <TextBlock Margin="3">Просмотренные</TextBlock>
+                            <TextBlock Margin="3" FontSize="14" FontFamily="Roboto">Просмотренные</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <ListBox x:Name="filmsList">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock FontSize="40" Text="{Binding Id}"/>
+                                        <TextBlock FontSize="40" Text="{Binding Title}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem.Content>
+                    
+                    
+                </TabItem>
+                <TabItem x:Name="planTab" Width="150" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Height="10" Width="10" Fill="Black" />
+                            <TextBlock Margin="3" FontSize="14">Планируемые</TextBlock>
                         </StackPanel>
                     </TabItem.Header>
                     <TabItem.Content>
                         Контент-контент-контент
                     </TabItem.Content>
                 </TabItem>
-                <TabItem x:Name="planTab" Width="120" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                <TabItem x:Name="recomendationTab" Width="150" Height="50" Background="#32CD32" Margin="0 0 10 0">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Ellipse Height="10" Width="10" Fill="Black" />
-                            <TextBlock Margin="3">Планируемые</TextBlock>
-                        </StackPanel>
-                    </TabItem.Header>
-                    <TabItem.Content>
-                        Контент-контент-контент
-                    </TabItem.Content>
-                </TabItem>
-                <TabItem x:Name="recomendationTab" Width="120" Height="50" Background="#32CD32" Margin="0 0 10 0">
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Ellipse Height="10" Width="10" Fill="Black" />
-                            <TextBlock Margin="3">Рекомендации</TextBlock>
+                            <TextBlock Margin="3" FontSize="14">Рекомендации</TextBlock>
                         </StackPanel>
                     </TabItem.Header>
                     <TabItem.Content>
