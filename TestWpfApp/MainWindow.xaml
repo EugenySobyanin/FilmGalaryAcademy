@@ -7,17 +7,46 @@
         mc:Ignorable="d"
         Title="Тестовый вариант приложения" Height="800" Width="1200">
     <Grid Background="Black">
-        <!--<Grid.RowDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="0.125*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>-->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" 
+                    Grid.Column="1" 
+                    Grid.RowSpan="6"
+                    Grid.ColumnSpan="4"
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center" 
+                    >
             <TabControl>
-                <TabItem x:Name="watchedTab" Width="150" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                <TabItem x:Name="watchedTab"
+                         Background="#32CD32" 
+                         Margin="0 0 10 0"
+                         Width="200" 
+                         Height="50"
+                         >
+                    
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Ellipse Height="10" Width="10" Fill="Black" />
-                            <TextBlock Margin="3" FontSize="14" FontFamily="Roboto">Просмотренные</TextBlock>
+                            <TextBlock Margin="3" FontSize="16" FontFamily="Roboto">Просмотренные</TextBlock>
                         </StackPanel>
                     </TabItem.Header>
                     <TabItem.Content>
@@ -34,8 +63,9 @@
                     </TabItem.Content>
                     
                     
+                    
                 </TabItem>
-                <TabItem x:Name="planTab" Width="150" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                <TabItem x:Name="planTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 10 0">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Ellipse Height="10" Width="10" Fill="Black" />
@@ -46,7 +76,7 @@
                         Контент-контент-контент
                     </TabItem.Content>
                 </TabItem>
-                <TabItem x:Name="recomendationTab" Width="150" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                <TabItem x:Name="recomendationTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 10 0">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Ellipse Height="10" Width="10" Fill="Black" />
@@ -59,6 +89,20 @@
                 </TabItem>
             </TabControl>
         </StackPanel>
+        <Button 
+            x:Name="AddFilm" 
+            Content="Добавить фильм" 
+            Height="100" 
+            Width="300"
+            Grid.Row="6"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            HorizontalContentAlignment="Center"
+            Margin="10"
+            Background="#32CD32"
+            FontSize="30"
+            Click="AbbFilmButtonClick"
+            />
     </Grid>
 </Window>
 
