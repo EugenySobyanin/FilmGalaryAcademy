@@ -14,8 +14,57 @@ namespace TestWpfApp
     class MainViewModel: ObservableObject
     {
         private ObservableCollection<Film> _filmlist = new ObservableCollection<Film>();
-        public ObservableCollection<Film> Filmlist { get => _filmlist; set {_filmlist = value; OnPropertyChanged("FilmList");}}
-        private FilmService _filmservice;
+        public ObservableCollection<Film> FilmList { get => _filmlist; set {_filmlist = value; OnPropertyChanged("FilmList");}}
+        private FilmService filmservice;
+        private Film _selectedFilm;
+        public Film SelectedFilm
+        {
+            get => _selectedFilm;
+            set
+            {
+                _selectedFilm = value;
+                OnPropertyChanged("SelectedFilm");
+            }
+        }
+
+        //конструктор
+        public MainViewModel(FilmService service)
+        {
+            filmservice = service;
+            FilmList = new ObservableCollection<Film>(filmservice.GetAll());
+        }
+
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
+        {
+            get
+            {
+                return addCommand ??
+                  (addCommand = new RelayCommand(obj =>
+                  {
+                      filmservice.Create(
+                          new Film(0, "Пираты карибского моря")
+                          );
+                      FilmList = new ObservableCollection<Film>(filmservice.GetAll());
+                  }));
+            }
+        }
+
+        private RelayCommand deleteCommand;
+        public RelayCommand DeleteCommand
+        {
+            get
+            {
+                return deleteCommand ??
+                  (deleteCommand = new RelayCommand(obj =>
+                  {
+                      filmservice.Delete(
+                          SelectedFilm.Id
+                          );
+                      FilmList = new ObservableCollection<Film>(filmservice.GetAll());
+                  }));
+            }
+        }
 
 
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWpfApp"
         mc:Ignorable="d"
-        Title="Тестовый вариант приложения" Height="800" Width="1200">
+        Title="Тестовый вариант приложения" Height="800" Width="1200" WindowState="Maximized">
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.125*"/>
@@ -26,12 +26,13 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            
+            <ColumnDefinition/>
+
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" 
                     Grid.Column="1" 
-                    Grid.RowSpan="6"
-                    Grid.ColumnSpan="4"
+                    Grid.RowSpan="8"
+                    Grid.ColumnSpan="5"
                     Orientation="Horizontal" 
                     HorizontalAlignment="Center" 
                     >
@@ -42,7 +43,7 @@
                          Width="200" 
                          Height="50"
                          >
-                    
+
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Ellipse Height="10" Width="10" Fill="Black" />
@@ -50,20 +51,28 @@
                         </StackPanel>
                     </TabItem.Header>
                     <TabItem.Content>
-                        <ListBox x:Name="filmsList">
+                        <ListBox
+                            ItemsSource="{Binding FilmList}"
+                            SelectedItem="{Binding SelectedFilm}"
+                            >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock FontSize="40" Text="{Binding Id}"/>
-                                        <TextBlock FontSize="40" Text="{Binding Title}"/>
-                                    </StackPanel>
+                                    <Expander>
+                                        <Expander.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="40" Text="{Binding Id}"/>
+                                                <TextBlock FontSize="40" Text="{Binding Title}"/>
+                                            </StackPanel>
+                                        </Expander.Header>
+                                        <TextBlock FontSize="40" Text="Содержимое Expaneder"/>
+                                    </Expander>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </TabItem.Content>
-                    
-                    
-                    
+
+
+
                 </TabItem>
                 <TabItem x:Name="planTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 10 0">
                     <TabItem.Header>
@@ -92,17 +101,34 @@
         <Button 
             x:Name="AddFilm" 
             Content="Добавить фильм" 
-            Height="100" 
-            Width="300"
-            Grid.Row="6"
+            Height="50" 
+            Width="400"
+            Grid.Row="8"
             Grid.Column="2"
             Grid.ColumnSpan="3"
             HorizontalContentAlignment="Center"
-            Margin="10"
+            Margin="57,14,57,15"
             Background="#32CD32"
             FontSize="30"
-            Click="AbbFilmButtonClick"
+            Click="AddFilmFormWindow"
             />
+            <!--Command="{Binding AddCommand}"-->
+            
+        <Button 
+            x:Name="DeleteFilm" 
+            Content="Удалить фильм" 
+            Height="50" 
+            Width="400"
+            Grid.Row="9"
+            Grid.Column="2"
+            Grid.ColumnSpan="3"
+            HorizontalContentAlignment="Center"
+            Margin="57,14,57,15"
+            Background="#32CD32"
+            FontSize="30"
+            Command="{Binding DeleteCommand}"
+            />
+        
     </Grid>
 </Window>
 

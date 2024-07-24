@@ -16,6 +16,7 @@ using System.Data.Common;
 
 
 
+
 namespace TestWpfApp
 {
     /// <summary>
@@ -37,19 +38,27 @@ namespace TestWpfApp
         //};
         //public FilmService service = new FilmService(new FilmGalaryDataSource());
         //ObservableCollection<Film> films2 = new ObservableCollection<Film>(service.GetAll());
+        private MainViewModel viewModel = new MainViewModel(new FilmService(new FilmGalaryDataSource()));
+        private static FilmForm filmFormWinow;
 
         public MainWindow()
         {
+            DataContext = viewModel;
             InitializeComponent();
-            filmsList.ItemsSource = films;
-
+            //filmsList.ItemsSource = films;
   
         }
 
-        private void AbbFilmButtonClick(object sender, RoutedEventArgs e)
+        private void AddFilmFormWindow(object sender, RoutedEventArgs e)
         {
-            
+            if (filmFormWinow == null) 
+            {
+                filmFormWinow = new FilmForm();
+                filmFormWinow.Show();
+            }
+
         }
+
 
 
     }
