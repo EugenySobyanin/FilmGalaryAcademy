@@ -5,12 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWpfApp"
         mc:Ignorable="d"
-        Title="FilmForm" Height="600" Width="400">
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="Название"/>
-            <TextBox/>
+        Title="FilmForm" Height="400" Width="250">
+    <Grid Background="DimGray">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Margin="5" >
+            <TextBlock Text="Название" FontSize="16" Margin="0 0 0 5"/>
+            <TextBox Height="20" />
         </StackPanel>
-        
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Margin="5">
+            <TextBlock Text="Рейтинг кинопоиска" FontSize="16" Margin="0 0 0 5"/>
+            <TextBox Height="20"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Margin="5">
+            <TextBlock Text="Год выпуска" FontSize="16" Margin="0 0 0 5"/>
+            <TextBox Height="20"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Margin="5">
+            <TextBlock Text="Ваша оценка" FontSize="16" Margin="0 0 0 5"/>
+            <TextBox Height="20"/>
+        </StackPanel>
+        <Button 
+            x:Name="AddFilm" 
+            Content="Добавить" 
+            Height="40" 
+            Width="90"
+            Grid.Row="4"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="5 0 0 0"
+            Background="#32CD32"
+            FontSize="14"
+            Command="{Binding AddCommand}"
+            Click="AddFilmButtonClick"
+            />
+            
     </Grid>
 </Window>

@@ -43,7 +43,7 @@ namespace TestWpfApp
                   (addCommand = new RelayCommand(obj =>
                   {
                       filmservice.Create(
-                          new Film(0, "Пираты карибского моря")
+                          new Film("Пираты карибского моря")
                           );
                       FilmList = new ObservableCollection<Film>(filmservice.GetAll());
                   }));

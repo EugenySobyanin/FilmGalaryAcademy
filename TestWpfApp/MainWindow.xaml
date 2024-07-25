@@ -99,7 +99,7 @@
             </TabControl>
         </StackPanel>
         <Button 
-            x:Name="AddFilm" 
+            x:Name="AddFormFilm" 
             Content="Добавить фильм" 
             Height="50" 
             Width="400"
