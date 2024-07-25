@@ -42,8 +42,7 @@
             Background="#32CD32"
             FontSize="14"
             Command="{Binding AddCommand}"
-            Click="AddFilmButtonClick"
             />
-            
+            <!--Click="AddFilmButtonClick"-->
     </Grid>
 </Window>

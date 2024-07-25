@@ -111,9 +111,9 @@
             Background="#32CD32"
             FontSize="30"
             Click="AddFilmFormWindow"
+            Command="{Binding AddCommand}"
             />
-            <!--Command="{Binding AddCommand}"-->
-            
+
         <Button 
             x:Name="DeleteFilm" 
             Content="Удалить фильм" 
