@@ -11,7 +11,7 @@ using FilmGalary.Core.Service;
 
 namespace TestWpfApp
 {
-    class MainViewModel: ObservableObject
+    public class MainViewModel: ObservableObject
     {
         private ObservableCollection<Film> _filmlist = new ObservableCollection<Film>();
         public ObservableCollection<Film> FilmList { get => _filmlist; set {_filmlist = value; OnPropertyChanged("FilmList");}}
@@ -24,6 +24,18 @@ namespace TestWpfApp
             {
                 _selectedFilm = value;
                 OnPropertyChanged("SelectedFilm");
+            }
+        }
+
+        // Связано с полем для ввода названия
+        private string _inputTitle = string.Empty;
+        public string InputTitle
+        {
+            get => _inputTitle;
+            set
+            {
+                _inputTitle = value;
+                OnPropertyChanged("InputTitle");
             }
         }
 
@@ -43,7 +55,7 @@ namespace TestWpfApp
                   (addCommand = new RelayCommand(obj =>
                   {
                       filmservice.Create(
-                          new Film("Пираты карибского моря")
+                          new Film(InputTitle)
                           );
                       FilmList = new ObservableCollection<Film>(filmservice.GetAll());
                   }));

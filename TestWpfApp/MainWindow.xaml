@@ -111,7 +111,6 @@
             Background="#32CD32"
             FontSize="30"
             Click="AddFilmFormWindow"
-            Command="{Binding AddCommand}"
             />
 
         <Button 

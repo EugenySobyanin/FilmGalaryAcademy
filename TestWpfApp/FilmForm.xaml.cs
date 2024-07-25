@@ -23,9 +23,10 @@ namespace TestWpfApp
     /// </summary>
     public partial class FilmForm : Window
     {
-        public FilmForm()
+        public FilmForm(MainViewModel viewModel)
         {
             InitializeComponent();
+            DataContext = viewModel;
         }
 
         //private void AddFilmButtonClick(object sender, RoutedEventArgs e)

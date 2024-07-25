@@ -53,7 +53,7 @@ namespace TestWpfApp
         {
             if (filmFormWinow == null) 
             {
-                filmFormWinow = new FilmForm();
+                filmFormWinow = new FilmForm(viewModel);
                 filmFormWinow.Show();
             }
 
