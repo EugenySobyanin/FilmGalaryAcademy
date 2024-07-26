@@ -60,11 +60,29 @@
                                     <Expander>
                                         <Expander.Header>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock FontSize="40" Text="{Binding Id}"/>
-                                                <TextBlock FontSize="40" Text="{Binding Title}"/>
+                                                <TextBlock FontSize="26" Text="{Binding Id}"/>
+                                                <TextBlock FontSize="26" Text="{Binding Title}"/>
                                             </StackPanel>
                                         </Expander.Header>
-                                        <TextBlock FontSize="40" Text="Содержимое Expaneder"/>
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="16" Text="Рейтинг кинопоиска: "/>
+                                                <TextBlock FontSize="16" Text="{Binding Rating}"/>
+                                            </StackPanel>
+                                            
+                                            <TextBlock FontSize="16" Text="Год выпуска: "/>
+                                            <TextBlock FontSize="16" Text="{Binding Rating}"/>
+                                            <TextBlock FontSize="16" Text="Год выпуска: "/>
+                                            <TextBlock FontSize="16" Text="{Binding Rating}"/>
+                                        </StackPanel>
+                                        <!--<StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Год выпуска: "/>
+                                            <TextBlock Text="{Binding Rating}"/>
+                                        </StackPanel>-->
+                                        <!--<StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Пользовательская оценка: "/>
+                                            --><!--<TextBlock Text="{Binding Year_release}"/>--><!--
+                                        </StackPanel>-->
                                     </Expander>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
