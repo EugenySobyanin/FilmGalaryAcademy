@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -72,6 +73,35 @@ namespace FilmGalary.Core.Service
         }
 
 
+        // Возвращает просмотренные фильмы
+        public List<Film> GetWatched()
+        {
+            List<Film> _watchedFilms = [];
 
+            foreach (Film film in _films)
+            {
+                if (film.IsWatched)
+                {
+                    _watchedFilms.Add(film);
+                }
+            }
+            return _watchedFilms;
+        }
+
+
+        // Возращает планируемые фильмы
+        public List<Film> GetPlan()
+        {
+            List<Film> _planFilms = [];
+
+            foreach (Film film in _films)
+            {
+                if (film.InPlan)
+                {
+                    _planFilms.Add(film);
+                }
+            }
+            return _planFilms;
+        }
     }
 }

@@ -13,6 +13,7 @@ using FilmGalary.Core.Entity;
 using FilmGalary.Core.Data;
 using FilmGalary.Core.Service;
 using System.Data.Common;
+using System.Diagnostics;
 
 
 
@@ -40,6 +41,7 @@ namespace TestWpfApp
         //ObservableCollection<Film> films2 = new ObservableCollection<Film>(service.GetAll());
         private MainViewModel viewModel = new MainViewModel(new FilmService(new FilmGalaryDataSource()));
         private static FilmForm filmFormWinow;
+        private static FilmFormPlan filmFormPlanWindow;
 
         public MainWindow()
         {
@@ -51,15 +53,29 @@ namespace TestWpfApp
 
         private void AddFilmFormWindow(object sender, RoutedEventArgs e)
         {
-            if (filmFormWinow == null) 
+            // Получаем текущий выбранный TabItem
+            var selectedTab = tabControl.SelectedItem as TabItem;
+            // В зависимости от того какая вкладка открыта, будем отдавать разные формы
+            //if (filmFormWinow == null) 
+            //{
+            //    filmFormWinow = new FilmForm(viewModel);
+            //    filmFormWinow.Show();
+            //}
+
+            //Console.WriteLine(selectedTab.Header.ToString());
+            //Debug.WriteLine("Все норм.");
+
+            if (selectedTab.Name.ToString() == "watchedTab")
             {
                 filmFormWinow = new FilmForm(viewModel);
                 filmFormWinow.Show();
             }
+            else if (selectedTab.Name.ToString() == "planTab")
+            {
+                filmFormPlanWindow = new FilmFormPlan(viewModel);
+                filmFormPlanWindow.Show();
+            }
 
         }
-
-
-
     }
 }

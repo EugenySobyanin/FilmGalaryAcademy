@@ -29,6 +29,8 @@
             <ColumnDefinition/>
 
         </Grid.ColumnDefinitions>
+        
+        <!-- Главный StackPanel со всеми вкладками -->
         <StackPanel Grid.Row="0" 
                     Grid.Column="1" 
                     Grid.RowSpan="8"
@@ -36,24 +38,87 @@
                     Orientation="Horizontal" 
                     HorizontalAlignment="Center" 
                     >
-            <TabControl>
-                <TabItem x:Name="watchedTab"
+            <!--Попытка получить активную вкладку  -->
+            <TabControl  x:Name="tabControl" SelectedItem="{Binding SelectedTab}">
+
+            <!-- Вкладка для просмотренных фильмов -->
+            <TabItem x:Name="watchedTab"
                          Background="#32CD32" 
                          Margin="0 0 10 0"
                          Width="200" 
                          Height="50"
                          >
 
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Ellipse Height="10" Width="10" Fill="Black" />
-                            <TextBlock Margin="3" FontSize="16" FontFamily="Roboto">Просмотренные</TextBlock>
-                        </StackPanel>
-                    </TabItem.Header>
-                    <TabItem.Content>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="3" FontSize="16" FontFamily="Roboto">Просмотренные</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Border>
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="Azure"/>
+                        </Border.BorderBrush>
                         <ListBox
                             ItemsSource="{Binding FilmList}"
                             SelectedItem="{Binding SelectedFilm}"
+                            >
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Expander>
+                                        <Expander.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="26" Text="{Binding Id}"/>
+                                                <TextBlock FontSize="26" Text="{Binding Title}"/>
+                                            </StackPanel>
+                                        </Expander.Header>
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="16" Text="Рейтинг кинопоиска: "/>
+                                                    <TextBlock FontSize="16" Text="{Binding Rating}"/>
+                                                </StackPanel>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="16" Text="Год выпуска: "/>
+                                                    <TextBlock FontSize="16" Text="{Binding YearRelease}"/>
+                                                </StackPanel>
+
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="16" Text="Ваша оценка: "/>
+                                                    <TextBlock FontSize="16" Text="{Binding UserRating}"/>
+                                                </StackPanel>
+
+                                            </StackPanel>
+                                        </Expander>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Border>
+                </TabItem.Content>
+            </TabItem>
+
+            <!-- Вкладка для планируемых фильмов -->
+            <TabItem x:Name="planTab"
+                    Background="#32CD32" 
+                    Margin="0 0 10 0"
+                    Width="200" 
+                    Height="50"
+                >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="3" FontSize="16" FontFamily="Roboto">Планируемые</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Border>
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="Azure"/>
+                        </Border.BorderBrush>
+                        <ListBox
+                                ItemsSource="{Binding FilmListPlan}"
+                                SelectedItem="{Binding SelectedFilm}"
                             >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
@@ -69,52 +134,40 @@
                                                 <TextBlock FontSize="16" Text="Рейтинг кинопоиска: "/>
                                                 <TextBlock FontSize="16" Text="{Binding Rating}"/>
                                             </StackPanel>
-                                            
-                                            <TextBlock FontSize="16" Text="Год выпуска: "/>
-                                            <TextBlock FontSize="16" Text="{Binding Rating}"/>
-                                            <TextBlock FontSize="16" Text="Год выпуска: "/>
-                                            <TextBlock FontSize="16" Text="{Binding Rating}"/>
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="16" Text="Год выпуска: "/>
+                                                <TextBlock FontSize="16" Text="{Binding YearRelease}"/>
+                                            </StackPanel>
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="16" Text="Ваша оценка: "/>
+                                                <TextBlock FontSize="16" Text="{Binding UserRating}"/>
+                                            </StackPanel>
+
+
                                         </StackPanel>
-                                        <!--<StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Год выпуска: "/>
-                                            <TextBlock Text="{Binding Rating}"/>
-                                        </StackPanel>-->
-                                        <!--<StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Пользовательская оценка: "/>
-                                            --><!--<TextBlock Text="{Binding Year_release}"/>--><!--
-                                        </StackPanel>-->
                                     </Expander>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                    </TabItem.Content>
+                    </Border>
+                </TabItem.Content>
+            </TabItem>
 
 
-
-                </TabItem>
-                <TabItem x:Name="planTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 10 0">
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Ellipse Height="10" Width="10" Fill="Black" />
-                            <TextBlock Margin="3" FontSize="14">Планируемые</TextBlock>
-                        </StackPanel>
-                    </TabItem.Header>
-                    <TabItem.Content>
-                        Контент-контент-контент
-                    </TabItem.Content>
-                </TabItem>
-                <TabItem x:Name="recomendationTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 10 0">
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Ellipse Height="10" Width="10" Fill="Black" />
-                            <TextBlock Margin="3" FontSize="14">Рекомендации</TextBlock>
-                        </StackPanel>
-                    </TabItem.Header>
-                    <TabItem.Content>
-                        Контент-контент-контент
-                    </TabItem.Content>
-                </TabItem>
-            </TabControl>
+            <TabItem x:Name="recomendationTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 10 0">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="3" FontSize="14">Рекомендации</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    Контент-контент-контент
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
         </StackPanel>
         <Button 
             x:Name="AddFormFilm" 
@@ -141,7 +194,7 @@
             Grid.ColumnSpan="3"
             HorizontalContentAlignment="Center"
             Margin="57,14,57,15"
-            Background="#32CD32"
+            Background="#33CEC3"
             FontSize="30"
             Command="{Binding DeleteCommand}"
             />

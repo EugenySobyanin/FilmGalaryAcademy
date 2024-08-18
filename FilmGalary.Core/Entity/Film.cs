@@ -8,10 +8,15 @@ namespace FilmGalary.Core.Entity
         public static int _id_counter = 0;
         
         // конструктор
-        public Film(string title = "Без названия")
+        public Film(string title = "Без названия", double rating=0.0, int year=0, double user_rating=0.0, bool isWatched=true, bool isPlan=false)
         {
             Id = _id_counter++;
             Title = title;
+            Rating = rating;
+            YearRelease = year;
+            UserRating = user_rating;
+            IsWatched = isWatched;
+            InPlan = isPlan;
         }
 
         // свойства
@@ -19,13 +24,14 @@ namespace FilmGalary.Core.Entity
         public int Id { get; set; }
         public string Title { get; set; }
         public double Rating { get; set; } = 0.0;
-        public int Year_release { get; set; } = 0000;
+        public int YearRelease { get; set; } = 0000;
+        public double UserRating { get; set; } = 0.0;
         //public FilmType Type { get; set; } = FilmType.No_data;
         //public List<Genre> Genre { get; set; } = new List<Genre>();
         //public Director Director { get; set; } = new Director();
         //public Country Country { get; set; } = new Country();
-        public bool Is_watched { get; set; } = false;
-        public bool In_watched_plan { get; set; } = false;
+        public bool IsWatched { get; set; } = false;
+        public bool InPlan { get; set; } = false;
         //public List<Actor> Main_actors { get; set; } = new List<Actor>();
 
 
