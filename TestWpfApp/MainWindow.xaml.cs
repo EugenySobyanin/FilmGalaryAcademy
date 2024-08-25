@@ -43,6 +43,7 @@ namespace TestWpfApp
         private static FilmForm filmFormWinow;
         private static FilmFormPlan filmFormPlanWindow;
 
+
         public MainWindow()
         {
             DataContext = viewModel;
@@ -67,11 +68,15 @@ namespace TestWpfApp
 
             if (selectedTab.Name.ToString() == "watchedTab")
             {
+                viewModel.IsWatchedAdd = true;
+                viewModel.InPlanAdd = false;
                 filmFormWinow = new FilmForm(viewModel);
                 filmFormWinow.Show();
             }
             else if (selectedTab.Name.ToString() == "planTab")
             {
+                viewModel.IsWatchedAdd = false;
+                viewModel.InPlanAdd = true;
                 filmFormPlanWindow = new FilmFormPlan(viewModel);
                 filmFormPlanWindow.Show();
             }

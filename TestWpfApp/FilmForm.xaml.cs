@@ -28,16 +28,5 @@ namespace TestWpfApp
             InitializeComponent();
             DataContext = viewModel;
         }
-
-        //private void AddFilmButtonClick(object sender, RoutedEventArgs e)
-        //{
-        //    //Film film = new Film("Великий Гетсби.");
-        //    //FilmService filmService = new FilmService(new FilmGalaryDataSource());
-        //    //filmService.Create(film);
-        //    this.Close();
-            
-
-            
-        //}
     }
 }

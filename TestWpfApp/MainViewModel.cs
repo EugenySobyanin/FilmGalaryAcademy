@@ -12,15 +12,15 @@ using System.Windows.Controls;
 
 namespace TestWpfApp
 {
-    public class MainViewModel: ObservableObject
+    public class MainViewModel : ObservableObject
     {
         // Для просмотренных фильмов
         private ObservableCollection<Film> _filmlist = new ObservableCollection<Film>();
-        public ObservableCollection<Film> FilmList { get => _filmlist; set {_filmlist = value; OnPropertyChanged("FilmList");}}
+        public ObservableCollection<Film> FilmList { get => _filmlist; set { _filmlist = value; OnPropertyChanged("FilmList"); } }
 
         // Для планируемых фильмов
         private ObservableCollection<Film> _filmlistPlan = new ObservableCollection<Film>();
-        public ObservableCollection<Film> FilmListPlan { get => _filmlistPlan; set { _filmlistPlan = value; OnPropertyChanged("FilmListPlan");}}
+        public ObservableCollection<Film> FilmListPlan { get => _filmlistPlan; set { _filmlistPlan = value; OnPropertyChanged("FilmListPlan"); } }
 
         // Для рекомендованных фильмов
         // ...
@@ -60,6 +60,26 @@ namespace TestWpfApp
             {
                 _tabControl.SelectedItem = value; // Устанавливаем новый выбранный элемент
                 OnPropertyChanged(nameof(SelectedTab));
+            }
+        }
+
+        private bool _isWatchedAdd;
+        public bool IsWatchedAdd 
+        {
+            get => _isWatchedAdd;
+            set 
+            {
+                _isWatchedAdd = value;
+            } 
+        }
+
+        private bool _inPlanAdd;
+        public bool InPlanAdd
+        {
+            get => _inPlanAdd;
+            set
+            {
+                _inPlanAdd = value;
             }
         }
 
@@ -131,11 +151,8 @@ namespace TestWpfApp
                 return addCommand ??
                   (addCommand = new RelayCommand(obj =>
                   {
-                      //bool isWatchedTab = SelectedTab == tabControl.FindName("watchedTab") as TabItem;
-                      // Логика в зависимости от того какая открыта вкладка должна быть здесь
-                      //if (_selectedTab == tabControl.FindName("watchedTab") as TabItem)
                       filmservice.Create(
-                          new Film(InputTitle, InputRating, InputYear, InputUserRating, true, true)
+                          new Film(InputTitle, InputRating, InputYear, InputUserRating, IsWatchedAdd, InPlanAdd)
                           );
                       FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
                       FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
