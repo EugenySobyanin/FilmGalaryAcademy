@@ -156,6 +156,8 @@ namespace TestWpfApp
                           );
                       FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
                       FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
+                      InputTitle = "";
+                      InputUserRating = 0;
                   }));
             }
         }
@@ -171,7 +173,8 @@ namespace TestWpfApp
                       filmservice.Delete(
                           SelectedFilm.Id
                           );
-                      FilmList = new ObservableCollection<Film>(filmservice.GetAll());
+                      FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
+                      FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
                   }));
             }
         }

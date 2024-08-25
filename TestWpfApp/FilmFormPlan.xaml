@@ -62,6 +62,7 @@
          Background="#32CD32"
          FontSize="14"
          Command="{Binding AddCommand}"
+         Click="FilmFormPlanClick"
          />
     </Grid>
 </Window>

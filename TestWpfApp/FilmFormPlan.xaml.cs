@@ -28,5 +28,11 @@ namespace TestWpfApp
             InitializeComponent();
             DataContext = viewModel;
         }
+
+        private void FilmFormPlanClick(object sender, RoutedEventArgs e)
+        {
+            this.Close(); // при добавлении Планируемого фильма закрываем окно с формой
+
+        }
     }
 }
