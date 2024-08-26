@@ -152,7 +152,8 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </Border>
-                </TabItem.Content>
+                        
+                    </TabItem.Content>
             </TabItem>
 
 

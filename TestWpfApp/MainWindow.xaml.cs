@@ -40,7 +40,7 @@ namespace TestWpfApp
         //public FilmService service = new FilmService(new FilmGalaryDataSource());
         //ObservableCollection<Film> films2 = new ObservableCollection<Film>(service.GetAll());
         private MainViewModel viewModel = new MainViewModel(new FilmService(new FilmGalaryDataSource()));
-        private static FilmForm filmFormWinow;
+        private static FilmForm filmFormWindow;
         private static FilmFormPlan filmFormPlanWindow;
 
 
@@ -68,13 +68,22 @@ namespace TestWpfApp
 
             if (selectedTab.Name.ToString() == "watchedTab")
             {
+                if (filmFormPlanWindow != null) 
+                {  
+                    filmFormPlanWindow.Close(); 
+                }
                 viewModel.IsWatchedAdd = true;
                 viewModel.InPlanAdd = false;
-                filmFormWinow = new FilmForm(viewModel);
-                filmFormWinow.Show();
+                filmFormWindow = new FilmForm(viewModel);
+                filmFormWindow.Show();
+                
             }
             else if (selectedTab.Name.ToString() == "planTab")
             {
+                if (filmFormWindow != null)
+                {
+                    filmFormWindow.Close();
+                }
                 viewModel.IsWatchedAdd = false;
                 viewModel.InPlanAdd = true;
                 filmFormPlanWindow = new FilmFormPlan(viewModel);
