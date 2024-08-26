@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmGalary.Core", "FilmGala
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmGalary.App", "FilmGalary.App\FilmGalary.App.csproj", "{237D95FA-8098-4B71-8A15-A9EB337377E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWpfApp", "TestWpfApp\TestWpfApp.csproj", "{AB4AEC5F-19E0-474D-B419-5CC2C4AC8B1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWpfApp", "TestWpfApp\TestWpfApp.csproj", "{AB4AEC5F-19E0-474D-B419-5CC2C4AC8B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmGallaryAPI", "FilmGallaryAPI\FilmGallaryAPI.csproj", "{288EA129-A860-4786-965A-9425E62FA5EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AB4AEC5F-19E0-474D-B419-5CC2C4AC8B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB4AEC5F-19E0-474D-B419-5CC2C4AC8B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB4AEC5F-19E0-474D-B419-5CC2C4AC8B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{288EA129-A860-4786-965A-9425E62FA5EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288EA129-A860-4786-965A-9425E62FA5EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288EA129-A860-4786-965A-9425E62FA5EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288EA129-A860-4786-965A-9425E62FA5EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
