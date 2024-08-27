@@ -41,7 +41,7 @@
             <!--Попытка получить активную вкладку  -->
             <TabControl  x:Name="tabControl" SelectedItem="{Binding SelectedTab}">
 
-            <!-- Вкладка для просмотренных фильмов -->
+                <!-- Вкладка для просмотренных фильмов -->
             <TabItem x:Name="watchedTab"
                          Background="#32CD32" 
                          Margin="0 0 10 0"
@@ -56,23 +56,25 @@
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Border>
-                        <Border.BorderBrush>
-                            <SolidColorBrush Color="Azure"/>
-                        </Border.BorderBrush>
-                        <ListBox
+                        <Border BorderBrush="Transparent" BorderThickness="0">
+                            <!--<Border.BorderBrush>
+                            <SolidColorBrush Color="Black"/>
+                        </Border.BorderBrush>-->
+                            <ListBox
                             ItemsSource="{Binding FilmList}"
                             SelectedItem="{Binding SelectedFilm}"
+                            Background="Black"
+                            BorderBrush="Black"
                             >
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Expander>
-                                        <Expander.Header>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock FontSize="26" Text="{Binding Id}"/>
-                                                <TextBlock FontSize="26" Text="{Binding Title}"/>
-                                            </StackPanel>
-                                        </Expander.Header>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Expander>
+                                            <Expander.Header>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="26" Text="{Binding Id}" Foreground="White" FontFamily="Verdana"/>
+                                                    <TextBlock FontSize="26" Text="{Binding Title}" Foreground="White" FontFamily="Verdana"/>
+                                                </StackPanel>
+                                            </Expander.Header>
                                             <StackPanel>
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock FontSize="16" Text="Рейтинг кинопоиска: "/>
@@ -91,11 +93,11 @@
 
                                             </StackPanel>
                                         </Expander>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </Border>
-                </TabItem.Content>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Border>
+                    </TabItem.Content>
             </TabItem>
 
             <!-- Вкладка для планируемых фильмов -->
@@ -112,9 +114,9 @@
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Border>
+                    <Border Background="Black">
                         <Border.BorderBrush>
-                            <SolidColorBrush Color="Azure"/>
+                            <SolidColorBrush Color="Black"/>
                         </Border.BorderBrush>
                         <ListBox
                                 ItemsSource="{Binding FilmListPlan}"
@@ -157,7 +159,7 @@
             </TabItem>
 
 
-            <TabItem x:Name="recomendationTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 10 0">
+            <TabItem x:Name="recomendationTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 0 0">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="10" Width="10" Fill="Black" />
