@@ -16,4 +16,8 @@
     <Folder Include="Core\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
+  </ItemGroup>
+
 </Project>

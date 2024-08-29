@@ -121,14 +121,15 @@
                         <ListBox
                                 ItemsSource="{Binding FilmListPlan}"
                                 SelectedItem="{Binding SelectedFilm}"
+                                Background="Black"
                             >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <Expander>
                                         <Expander.Header>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock FontSize="26" Text="{Binding Id}"/>
-                                                <TextBlock FontSize="26" Text="{Binding Title}"/>
+                                                    <TextBlock FontSize="26" Text="{Binding Id}" Foreground="White" FontFamily="Verdana"/>
+                                                    <TextBlock FontSize="26" Text="{Binding Title}" Foreground="White" FontFamily="Verdana"/>
                                             </StackPanel>
                                         </Expander.Header>
                                         <StackPanel>

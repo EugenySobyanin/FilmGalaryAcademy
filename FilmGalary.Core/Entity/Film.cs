@@ -42,20 +42,20 @@ namespace FilmGalary.Core.Entity
 
     }
 
-    public enum FilmType
-    {
-        Series,
-        Cinema,
-        Cartoon,
-        Animated_series,
-        No_data,
-    }
+    //public enum FilmType
+    //{
+    //    Series,
+    //    Cinema,
+    //    Cartoon,
+    //    Animated_series,
+    //    No_data,
+    //}
 
-    public enum Genre
-    {
-        Horror,
-        Action,
-        Comedy,
-    }
+    //public enum Genre
+    //{
+    //    Horror,
+    //    Action,
+    //    Comedy,
+    //}
 }
 
