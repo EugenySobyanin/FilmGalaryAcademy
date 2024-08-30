@@ -14,5 +14,12 @@ namespace FilmGallaryAPI
 
         public DbSet<Film2> Films { get; set; }
 
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+
+        //    modelBuilder.ApplyConfiguration(new F);
+        //    base.OnModelCreating(modelBuilder);
+        //}
+
     }
 }
