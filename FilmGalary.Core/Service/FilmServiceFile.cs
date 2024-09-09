@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace FilmGalary.Core.Service
 {
-    public class FilmService
+    public class FilmServiceFile
     {
         private FilmGalaryDataSource _dataSource;
         private List<Film> _films = []; 
-        public FilmService(FilmGalaryDataSource dataSource) // конструктор
+        public FilmServiceFile(FilmGalaryDataSource dataSource) // конструктор
         {
             _dataSource = dataSource;
             _films = _dataSource.Get() ?? new List<Film>(); // получаем все фильмы из файла

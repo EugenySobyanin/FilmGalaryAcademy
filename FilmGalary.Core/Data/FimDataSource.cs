@@ -22,18 +22,38 @@ namespace FilmGalary.Core.Data
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<Film> GetFilmAsync(string path)
+
+        // Метод для получения одного объекта при GET запросе
+        public async Task<Film> GetFilmDetail(string path)
         {
             Film film = null;
 
             HttpResponseMessage response = await client.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                cinema = DataSerializer.Deserialize<Cinema>(
+                film = DataSerializer.Deserialize<Film>(
                     await response.Content.ReadAsStringAsync());
             }
-            return cinema;
+            return film;
         }
 
+
+        // Метод для получения списка объектов при GET запросе
+        public async Task<List<Film>> GetFilmList()
+        {
+
+            HttpResponseMessage response = await client.GetAsync(
+                "api/v1/films/");
+            response.EnsureSuccessStatusCode();
+
+            List<Film> FilmResponse = new List<Film>();
+            if (response.IsSuccessStatusCode)
+            {
+                FilmResponse = DataSerializer.Deserialize<List<Film>>(
+                    await response.Content.ReadAsStringAsync()
+                );
+            }
+            return FilmResponse;
+        }
     }
 }
