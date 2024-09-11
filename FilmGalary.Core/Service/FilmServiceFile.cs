@@ -12,7 +12,9 @@ namespace FilmGalary.Core.Service
     {
         private FilmGalaryDataSource _dataSource;
         private List<Film> _films = []; 
-        public FilmServiceFile(FilmGalaryDataSource dataSource) // конструктор
+
+        // Конструктор
+        public FilmServiceFile(FilmGalaryDataSource dataSource) 
         {
             _dataSource = dataSource;
             _films = _dataSource.Get() ?? new List<Film>(); // получаем все фильмы из файла

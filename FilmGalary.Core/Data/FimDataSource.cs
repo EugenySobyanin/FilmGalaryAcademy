@@ -55,5 +55,25 @@ namespace FilmGalary.Core.Data
             }
             return FilmResponse;
         }
+
+
+        // Метод для получения списка просмотренных фильмов GET запросом
+        public async Task<List<Film>> GetWatchedList()
+        {
+
+            HttpResponseMessage response = await client.GetAsync(
+                "api/v1/watched/");
+            response.EnsureSuccessStatusCode();
+
+            List<Film> FilmResponse = new List<Film>();
+            if (response.IsSuccessStatusCode)
+            {
+                FilmResponse = DataSerializer.Deserialize<List<Film>>(
+                    await response.Content.ReadAsStringAsync()
+                );
+            }
+            return FilmResponse;
+        }
+
     }
 }
