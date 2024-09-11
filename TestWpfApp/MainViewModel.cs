@@ -25,7 +25,8 @@ namespace TestWpfApp
         // Для рекомендованных фильмов
         // ...
 
-        private FilmService filmservice;
+        //private FilmServiceDB filmservice;
+        private FilmServiceFile filmservice;
 
         private TabControl _tabControl;  // Хранение ссылки на TabControl
 
@@ -134,14 +135,22 @@ namespace TestWpfApp
 
 
         //конструктор
-        public MainViewModel(FilmService service)
+        public MainViewModel(FilmServiceFile service)
         {
             filmservice = service;
             // Либо можно попробовать здесь получать просмотренные или планируемые фильмы
+            //Task.Run(() => Init()).Wait();
             FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
             FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
 
+
         }
+
+        //private async Task Init()
+        //{
+        //    FilmList = new ObservableCollection<Film>(await filmservice.GetContent());
+        //    //FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
+        //}
 
         private RelayCommand addCommand;
         public RelayCommand AddCommand

@@ -25,21 +25,8 @@ namespace TestWpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        //public Film obj1 = new(0, "Пираты карибского моря.");
-        //public Film obj2 = new(1, "Тачки");
-        //Film obj3 = new(2, "Остров проклятых");
-
-
-
-        //ObservableCollection<Film> films = new ObservableCollection<Film>
-        //{
-        //    new Film(0, "Пираты карибского моря."),
-        //    new Film(1, "Пираты карибского моря."),
-        //    new Film(2, "Пираты карибского моря."),
-        //};
-        //public FilmService service = new FilmService(new FilmGalaryDataSource());
-        //ObservableCollection<Film> films2 = new ObservableCollection<Film>(service.GetAll());
-        private MainViewModel viewModel = new MainViewModel(new FilmService(new FilmGalaryDataSource()));
+        
+        private MainViewModel viewModel = new MainViewModel(new FilmServiceFile(new FilmGalaryDataSource()));
         private static FilmForm filmFormWindow;
         private static FilmFormPlan filmFormPlanWindow;
 

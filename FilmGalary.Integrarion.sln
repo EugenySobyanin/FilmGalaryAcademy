@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmGalary.App", "FilmGalar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWpfApp", "TestWpfApp\TestWpfApp.csproj", "{AB4AEC5F-19E0-474D-B419-5CC2C4AC8B1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmGallaryAPI", "FilmGallaryAPI\FilmGallaryAPI.csproj", "{288EA129-A860-4786-965A-9425E62FA5EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmGallaryAPI", "FilmGallaryAPI\FilmGallaryAPI.csproj", "{288EA129-A860-4786-965A-9425E62FA5EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_For_Developing", "WPF_For_Developing\WPF_For_Developing.csproj", "{F1223C6D-31BF-4ED5-A19F-F494E4CCD263}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{288EA129-A860-4786-965A-9425E62FA5EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{288EA129-A860-4786-965A-9425E62FA5EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{288EA129-A860-4786-965A-9425E62FA5EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1223C6D-31BF-4ED5-A19F-F494E4CCD263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1223C6D-31BF-4ED5-A19F-F494E4CCD263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1223C6D-31BF-4ED5-A19F-F494E4CCD263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1223C6D-31BF-4ED5-A19F-F494E4CCD263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

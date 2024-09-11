@@ -31,6 +31,9 @@ namespace TestWpfApp
 
         private void FilmFormClick(object sender, RoutedEventArgs e)
         {
+            SearchFilms anotherWindow = new SearchFilms();
+            anotherWindow.Show();
+
             this.Close(); // при добавлении Просмотренного фильма закрываем окно с формой
             
         }
