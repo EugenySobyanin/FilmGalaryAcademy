@@ -40,24 +40,6 @@ namespace FilmGalary.Core.Data
         }
 
 
-        // Метод для получения одного объекта при GET запросе
-        public async Task<Film> GetFilmDetail(string path)
-        {
-            Film film = null;
-
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
-            {
-                film = DataSerializer.Deserialize<Film>(
-                    await response.Content.ReadAsStringAsync());
-            }
-            return film;
-        }
-
-
-        
-
-
         // Метод для получения списка просмотренных фильмов GET запросом
         public async Task<List<Film>> GetWatchedList()
         {
@@ -74,6 +56,20 @@ namespace FilmGalary.Core.Data
                 );
             }
             return FilmResponse;
+        }
+
+        // Метод для получения одного объекта при GET запросе
+        public async Task<Film> GetFilmDetail(string path)
+        {
+            Film film = null;
+
+            HttpResponseMessage response = await client.GetAsync(path);
+            if (response.IsSuccessStatusCode)
+            {
+                film = DataSerializer.Deserialize<Film>(
+                    await response.Content.ReadAsStringAsync());
+            }
+            return film;
         }
 
     }

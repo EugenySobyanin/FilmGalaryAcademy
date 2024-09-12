@@ -3,6 +3,7 @@ using FilmGalary.Core.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,11 @@ namespace TestWpfApp
         {
             DataContext = viewModel;
             InitializeComponent();
+        }
+
+        private void SendPostRequest(object sender, RoutedEventArgs e)
+        {
+            HttpClient client = new HttpClient();
         }
     }
 }

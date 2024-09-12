@@ -35,7 +35,7 @@ namespace TestWpfApp
             anotherWindow.Show();
 
             this.Close(); // при добавлении Просмотренного фильма закрываем окно с формой
-            
+
         }
     }
 }

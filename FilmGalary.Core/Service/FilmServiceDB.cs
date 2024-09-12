@@ -21,10 +21,16 @@ namespace FilmGalary.Core.Service
             _dataSource = dataSource;
         }
 
-        // асинхронный метод получения просмотренных фильмов
+        // асинхронный метод получения фильмов с параметром поиска
         public async Task<List<Film>> GetContent() 
         {
-            return await _dataSource.GetWatchedList();   
+            return await _dataSource.GetFilmListWithSearch();   
+        }
+
+        // асинхронный метод получения просмотренных пользователем фильмов
+        public async Task<List<Film>> GetWatched()
+        {
+            return await _dataSource.GetWatchedList();
         }
 
     }
