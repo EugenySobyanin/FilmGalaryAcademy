@@ -61,9 +61,9 @@ namespace TestWpfApp
         private FilmDataSource filmDataSource;
         private SearchFilmViewModel viewModel;
 
-        public SearchFilms()
+        public SearchFilms( FilmDataSource dataSource)
         {
-            filmDataSource = new FilmDataSource(); // Инициализация экземпляра
+            filmDataSource = dataSource; // Инициализация экземпляра
             viewModel = new SearchFilmViewModel(new FilmServiceDB(filmDataSource)); // Передача его в viewModel
             DataContext = viewModel;
             InitializeComponent();

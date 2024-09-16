@@ -14,23 +14,26 @@ namespace FilmGalary.Core.Service
     {
         // экземпляр класса датасорса(который ходит в БД)
         private FilmDataSource _dataSource;
+        
 
         // конструктор
         public FilmServiceDB(FilmDataSource dataSource)
         {
-            _dataSource = dataSource;
+            DataSource = dataSource;
         }
+
+        public FilmDataSource DataSource { get => _dataSource; set => _dataSource = value; }
 
         // асинхронный метод получения фильмов с параметром поиска
         public async Task<List<Film>> GetContent() 
         {
-            return await _dataSource.GetFilmListWithSearch();   
+            return await DataSource.GetFilmListWithSearch();   
         }
 
         // асинхронный метод получения просмотренных пользователем фильмов
-        public async Task<List<Film>> GetWatched()
+        public async Task<List<WatchedFilm>> GetWatched()
         {
-            return await _dataSource.GetWatchedList();
+            return await DataSource.GetWatchedList();
         }
 
 

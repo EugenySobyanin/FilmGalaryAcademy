@@ -42,21 +42,35 @@ namespace FilmGalary.Core.Data
 
 
         // Метод для получения списка просмотренных фильмов GET запросом
-        public async Task<List<Film>> GetWatchedList()
-        {
+        //public async Task<List<Film>> GetWatchedList()
+        //{
 
-            HttpResponseMessage response = await client.GetAsync(
-                "api/v1/watched/");
+        //    HttpResponseMessage response = await client.GetAsync("api/v1/watched/");
+        //    response.EnsureSuccessStatusCode();
+
+
+        //    List<Film> FilmResponse = new List<Film>();
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        FilmResponse = DataSerializer.Deserialize<List<Film>>(
+        //            await response.Content.ReadAsStringAsync()
+        //        );
+        //    }
+        //    return FilmResponse;
+        //}
+
+        public async Task<List<WatchedFilm>> GetWatchedList()
+        {
+            HttpResponseMessage response = await client.GetAsync("api/v1/watched/");
             response.EnsureSuccessStatusCode();
 
-            List<Film> FilmResponse = new List<Film>();
+            List<WatchedFilm> watchedFilms = new List<WatchedFilm>();
             if (response.IsSuccessStatusCode)
             {
-                FilmResponse = DataSerializer.Deserialize<List<Film>>(
-                    await response.Content.ReadAsStringAsync()
-                );
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                watchedFilms = DataSerializer.Deserialize<List<WatchedFilm>>(jsonResponse);
             }
-            return FilmResponse;
+            return watchedFilms;
         }
 
         // Метод для получения одного объекта при GET запросе

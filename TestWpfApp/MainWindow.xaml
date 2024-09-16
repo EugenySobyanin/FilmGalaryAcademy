@@ -71,24 +71,24 @@
                                         <Expander>
                                             <Expander.Header>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="26" Text="{Binding Id}" Foreground="White" FontFamily="Verdana"/>
-                                                    <TextBlock FontSize="26" Text="{Binding Title}" Foreground="White" FontFamily="Verdana"/>
+                                                    <TextBlock FontSize="26" Text="{Binding Path=Film.Id}" Foreground="White" FontFamily="Verdana"/>
+                                                    <TextBlock FontSize="26" Text="{Binding Path=Film.Title}" Foreground="White" FontFamily="Verdana"/>
                                                 </StackPanel>
                                             </Expander.Header>
                                             <StackPanel>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Рейтинг кинопоиска: "/>
-                                                    <TextBlock FontSize="16" Text="{Binding Rating}"/>
+                                                    <TextBlock FontSize="16" Text="Рейтинг кинопоиска: " Foreground="White" FontFamily="Verdana"/>
+                                                    <TextBlock FontSize="16" Text="{Binding Path=Film.Rating_kp}" Foreground="White" FontFamily="Verdana"/>
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Год выпуска: "/>
-                                                    <TextBlock FontSize="16" Text="{Binding YearRelease}"/>
+                                                    <TextBlock FontSize="16" Text="Год выпуска: " Foreground="White" FontFamily="Verdana"/>
+                                                    <TextBlock FontSize="16" Text="{Binding Path=Film.Release_year}" Foreground="White" FontFamily="Verdana"/>
                                                 </StackPanel>
 
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Ваша оценка: "/>
-                                                    <TextBlock FontSize="16" Text="{Binding UserRating}"/>
+                                                    <TextBlock FontSize="16" Text="Ваша оценка: " Foreground="White" FontFamily="Verdana"/>
+                                                    <TextBlock FontSize="16" Text="{Binding UserRating}" Foreground="White" FontFamily="Verdana"/>
                                                 </StackPanel>
 
                                             </StackPanel>

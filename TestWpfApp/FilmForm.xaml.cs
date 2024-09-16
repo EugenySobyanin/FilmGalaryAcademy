@@ -23,15 +23,17 @@ namespace TestWpfApp
     /// </summary>
     public partial class FilmForm : Window
     {
+        private MainViewModel viewModel;
         public FilmForm(MainViewModel viewModel)
         {
+            this.viewModel = viewModel;
             InitializeComponent();
             DataContext = viewModel;
         }
 
         private void FilmFormClick(object sender, RoutedEventArgs e)
         {
-            SearchFilms anotherWindow = new SearchFilms();
+            SearchFilms anotherWindow = new SearchFilms(viewModel.Filmservice.DataSource);
             anotherWindow.Show();
 
             this.Close(); // при добавлении Просмотренного фильма закрываем окно с формой

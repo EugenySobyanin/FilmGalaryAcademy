@@ -15,8 +15,8 @@ namespace TestWpfApp
     public class MainViewModel : ObservableObject
     {
         // Для просмотренных фильмов
-        private ObservableCollection<Film> _filmlist = new ObservableCollection<Film>();
-        public ObservableCollection<Film> FilmList { get => _filmlist; set { _filmlist = value; OnPropertyChanged("FilmList"); } }
+        private ObservableCollection<WatchedFilm> _filmlist = new ObservableCollection<WatchedFilm>();
+        public ObservableCollection<WatchedFilm> FilmList { get => _filmlist; set { _filmlist = value; OnPropertyChanged("FilmList"); } }
 
         // Для планируемых фильмов
         private ObservableCollection<Film> _filmlistPlan = new ObservableCollection<Film>();
@@ -132,12 +132,14 @@ namespace TestWpfApp
             }
         }
 
+        public FilmServiceDB Filmservice { get => filmservice; set => filmservice = value; }
+
 
 
         //конструктор
         public MainViewModel(FilmServiceDB service)
         {
-            filmservice = service;
+            Filmservice = service;
             // Либо можно попробовать здесь получать просмотренные или планируемые фильмы
             Task.Run(() => Init()).Wait();
             //FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
@@ -147,7 +149,7 @@ namespace TestWpfApp
 
         private async Task Init()
         {
-            FilmList = new ObservableCollection<Film>(await filmservice.GetWatched());
+            FilmList = new ObservableCollection<WatchedFilm>(await Filmservice.GetWatched());
             //FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
         }
 
