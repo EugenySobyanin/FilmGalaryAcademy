@@ -26,7 +26,7 @@ namespace TestWpfApp
     public partial class MainWindow : Window
     {
         
-        private MainViewModel viewModel = new MainViewModel(new FilmServiceFile(new FilmGalaryDataSource()));
+        private MainViewModel viewModel = new MainViewModel(new FilmServiceDB(new FilmDataSource()));
         private static FilmForm filmFormWindow;
         private static FilmFormPlan filmFormPlanWindow;
 

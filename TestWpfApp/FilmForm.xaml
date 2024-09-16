@@ -70,8 +70,9 @@
             Margin="5 0 0 0"
             Background="#32CD32"
             FontSize="14"
-            Command="{Binding AddCommand}"
+            
             Click="FilmFormClick"
             />
+            <!--CommandBinding="{Binding AddCommand}"-->
     </Grid>
 </Window>

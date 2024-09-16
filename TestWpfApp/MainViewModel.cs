@@ -25,8 +25,8 @@ namespace TestWpfApp
         // Для рекомендованных фильмов
         // ...
 
-        //private FilmServiceDB filmservice;
-        private FilmServiceFile filmservice;
+        private FilmServiceDB filmservice;
+        //private FilmServiceFile filmservice;
 
         private TabControl _tabControl;  // Хранение ссылки на TabControl
 
@@ -135,58 +135,57 @@ namespace TestWpfApp
 
 
         //конструктор
-        public MainViewModel(FilmServiceFile service)
+        public MainViewModel(FilmServiceDB service)
         {
             filmservice = service;
             // Либо можно попробовать здесь получать просмотренные или планируемые фильмы
-            //Task.Run(() => Init()).Wait();
-            FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
-            FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
-
+            Task.Run(() => Init()).Wait();
+            //FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
+            //FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
 
         }
 
-        //private async Task Init()
+        private async Task Init()
+        {
+            FilmList = new ObservableCollection<Film>(await filmservice.GetWatched());
+            //FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
+        }
+
+        //private RelayCommand addCommand;
+        //public RelayCommand AddCommand
         //{
-        //    FilmList = new ObservableCollection<Film>(await filmservice.GetContent());
-        //    //FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
+        //    get
+        //    {
+        //        return addCommand ??
+        //          (addCommand = new RelayCommand(obj =>
+        //          {
+        //              filmservice.Create(
+        //                  new Film(InputTitle, InputRating, InputYear, InputUserRating, IsWatchedAdd, InPlanAdd)
+        //                  );
+        //              FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
+        //              FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
+        //              InputTitle = "";
+        //              InputUserRating = 0;
+        //          }));
+        //    }
         //}
 
-        private RelayCommand addCommand;
-        public RelayCommand AddCommand
-        {
-            get
-            {
-                return addCommand ??
-                  (addCommand = new RelayCommand(obj =>
-                  {
-                      filmservice.Create(
-                          new Film(InputTitle, InputRating, InputYear, InputUserRating, IsWatchedAdd, InPlanAdd)
-                          );
-                      FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
-                      FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
-                      InputTitle = "";
-                      InputUserRating = 0;
-                  }));
-            }
-        }
-
-        private RelayCommand deleteCommand;
-        public RelayCommand DeleteCommand
-        {
-            get
-            {
-                return deleteCommand ??
-                  (deleteCommand = new RelayCommand(obj =>
-                  {
-                      filmservice.Delete(
-                          SelectedFilm.Id
-                          );
-                      FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
-                      FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
-                  }));
-            }
-        }
+        //private RelayCommand deleteCommand;
+        //public RelayCommand DeleteCommand
+        //{
+        //    get
+        //    {
+        //        return deleteCommand ??
+        //          (deleteCommand = new RelayCommand(obj =>
+        //          {
+        //              filmservice.Delete(
+        //                  SelectedFilm.Id
+        //                  );
+        //              FilmList = new ObservableCollection<Film>(filmservice.GetWatched());
+        //              FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
+        //          }));
+        //    }
+        //}
 
 
     }

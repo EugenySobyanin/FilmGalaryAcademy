@@ -7,6 +7,7 @@ using FilmGalary.Core.Utils;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using FilmGalary.Core.Entity;
+using Newtonsoft.Json;
 
 namespace FilmGalary.Core.Data
 {
@@ -71,6 +72,25 @@ namespace FilmGalary.Core.Data
             }
             return film;
         }
+
+
+        // Метод для отправки Post запроса на добавление просмотренного фильма
+        public async Task<bool> AddWatchedFilm(int filmId, double userRating)
+        {
+            var url = "api/v1/watched/";
+            var data = new
+            {
+                film = filmId,
+                user_rating = userRating
+            };
+
+            var json = JsonConvert.SerializeObject(data);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = await client.PostAsync(url, content);
+            return response.IsSuccessStatusCode; // Возвращает true, если запрос успешен
+        }
+
 
     }
 }

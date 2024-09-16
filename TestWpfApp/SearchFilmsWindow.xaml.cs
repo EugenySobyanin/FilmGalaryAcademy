@@ -15,20 +15,83 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+//namespace TestWpfApp
+//{
+//    public partial class SearchFilms : Window
+//    {
+//        FilmDataSource filmDataSource = new FilmDataSource();
+//        private SearchFilmViewModel viewModel = new SearchFilmViewModel(new FilmServiceDB(filmDataSource));
+//        public SearchFilms()
+//        {
+//            DataContext = viewModel;
+//            InitializeComponent();
+//        }
+
+//        private async void SendPostRequest(object sender, RoutedEventArgs e)
+//        {
+//            try
+//            {
+
+//                bool result = await filmDataSource.AddWatchedFilm(1, 5);
+
+//                if (result)
+//                {
+//                    MessageBox.Show("Фильм успешно добавлен в просмотренные!");
+//                }
+//                else
+//                {
+//                    MessageBox.Show("Ошибка при добавлении фильма");
+//                }
+//            }
+//            catch (HttpRequestException httpEx)
+//            {
+//                MessageBox.Show($"Ошибка сети: {httpEx.Message}.");
+//            }
+//            catch (Exception ex)
+//            {
+//                MessageBox.Show($"Произошла ошибка: {ex.Message}.");
+//            }
+//        }
+//    }
+//}
 namespace TestWpfApp
 {
     public partial class SearchFilms : Window
     {
-        private SearchFilmViewModel viewModel = new SearchFilmViewModel(new FilmServiceDB(new FilmDataSource()));
+        private FilmDataSource filmDataSource;
+        private SearchFilmViewModel viewModel;
+
         public SearchFilms()
         {
+            filmDataSource = new FilmDataSource(); // Инициализация экземпляра
+            viewModel = new SearchFilmViewModel(new FilmServiceDB(filmDataSource)); // Передача его в viewModel
             DataContext = viewModel;
             InitializeComponent();
         }
 
-        private void SendPostRequest(object sender, RoutedEventArgs e)
+        private async void SendPostRequest(object sender, RoutedEventArgs e)
         {
-            HttpClient client = new HttpClient();
+            try
+            {
+                bool result = await filmDataSource.AddWatchedFilm(1, 5);
+
+                if (result)
+                {
+                    MessageBox.Show("Фильм успешно добавлен в просмотренные! 🎉");
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка при добавлении фильма. ❌");
+                }
+            }
+            catch (HttpRequestException httpEx)
+            {
+                MessageBox.Show($"Ошибка сети: {httpEx.Message}. ⚠️");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Произошла ошибка: {ex.Message}. ⚠️");
+            }
         }
     }
 }

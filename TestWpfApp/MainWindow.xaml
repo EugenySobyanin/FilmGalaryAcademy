@@ -200,8 +200,9 @@
             Margin="57,14,57,15"
             Background="#33CEC3"
             FontSize="30"
-            Command="{Binding DeleteCommand}"
+            
             />
+        <!--Command="{Binding DeleteCommand}"-->
         
     </Grid>
 </Window>
