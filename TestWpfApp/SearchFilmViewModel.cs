@@ -10,23 +10,36 @@ using TestWpfApp.Core;
 
 namespace TestWpfApp
 {
-    internal class SearchFilmViewModel : ObservableObject
+    public class SearchFilmViewModel : ObservableObject
     {
         private ObservableCollection<Film> _filmlist = new ObservableCollection<Film>();
         public ObservableCollection<Film> FilmList { get => _filmlist; set { _filmlist = value; OnPropertyChanged("FilmList"); } }
-        private FilmServiceDB filmservice;
+        public FilmServiceDB filmservice;
 
         public SearchFilmViewModel(FilmServiceDB service)
         {
             filmservice = service;
             // Либо можно попробовать здесь получать просмотренные или планируемые фильмы
-            Task.Run(() => Init()).Wait();
+            Task.Run(() => Fetch()).Wait();
         }
 
 
-        private async Task Init()
+        // Связано с полем для ввода названия
+        private string _inputTitle = string.Empty;
+        public string InputTitle
         {
-            FilmList = new ObservableCollection<Film>(await filmservice.GetContent());
+            get => _inputTitle;
+            set
+            {
+                _inputTitle = value;
+                OnPropertyChanged("InputTitle");
+            }
+        }
+
+
+        public async Task Fetch()
+        {
+            FilmList = new ObservableCollection<Film>(await filmservice.GetContent(_inputTitle));
         }
     }
 }

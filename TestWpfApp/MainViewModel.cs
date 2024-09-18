@@ -85,16 +85,16 @@ namespace TestWpfApp
         }
 
         // Связано с полем для ввода названия
-        private string _inputTitle = string.Empty;
-        public string InputTitle
-        {
-            get => _inputTitle;
-            set
-            {
-                _inputTitle = value;
-                OnPropertyChanged("InputTitle");
-            }
-        }
+        //private string _inputTitle = string.Empty;
+        //public string InputTitle
+        //{
+        //    get => _inputTitle;
+        //    set
+        //    {
+        //        _inputTitle = value;
+        //        OnPropertyChanged("InputTitle");
+        //    }
+        //}
 
         // Связано с полем для ввода рейтинга кинопоиска
         private double _inputRating;

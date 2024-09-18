@@ -25,11 +25,15 @@ namespace FilmGalary.Core.Data
 
 
         // Метод для получения списка объектов при GET запросе
-        public async Task<List<Film>> GetFilmListWithSearch()
+        // Этот метод должен принимать строку для отправки запроса с параметром для поиска
+        // Пример запроса: http://127.0.0.1:8000/api/v1/films/?search=Пираты
+        public async Task<List<Film>> GetFilmListWithSearch(string searchTerm)
         {
 
-            HttpResponseMessage response = await client.GetAsync(
-                "api/v1/films/");
+            // Кодировщик URL, чтобы избежать проблем с пробелами и специальными символами
+            string encodedSearchTerm = Uri.EscapeDataString(searchTerm);
+
+            HttpResponseMessage response = await client.GetAsync($"api/v1/films/?search={encodedSearchTerm}");
             response.EnsureSuccessStatusCode();
 
             List<Film> FilmResponse = new List<Film>();

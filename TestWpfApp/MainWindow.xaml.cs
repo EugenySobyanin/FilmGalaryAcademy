@@ -26,6 +26,7 @@ namespace TestWpfApp
     public partial class MainWindow : Window
     {
         
+        // Здесь создается экземпляр Main
         private MainViewModel viewModel = new MainViewModel(new FilmServiceDB(new FilmDataSource()));
         private static FilmForm filmFormWindow;
         private static FilmFormPlan filmFormPlanWindow;

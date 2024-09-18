@@ -20,7 +20,7 @@
             <TextBox 
                 Height="20" 
                 x:Name="InputTitle"
-                Text="{Binding InputTitle}"
+                TextChanged="InputTitle_TextChanged"
             />
         </StackPanel>
         

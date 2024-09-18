@@ -25,9 +25,9 @@ namespace FilmGalary.Core.Service
         public FilmDataSource DataSource { get => _dataSource; set => _dataSource = value; }
 
         // асинхронный метод получения фильмов с параметром поиска
-        public async Task<List<Film>> GetContent() 
+        public async Task<List<Film>> GetContent(string search) 
         {
-            return await DataSource.GetFilmListWithSearch();   
+            return await DataSource.GetFilmListWithSearch(search);   
         }
 
         // асинхронный метод получения просмотренных пользователем фильмов

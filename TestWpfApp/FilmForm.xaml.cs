@@ -24,20 +24,28 @@ namespace TestWpfApp
     public partial class FilmForm : Window
     {
         private MainViewModel viewModel;
+        private SearchFilmViewModel searchViewModel;
+
+        private string _searchString;
         public FilmForm(MainViewModel viewModel)
         {
             this.viewModel = viewModel;
+            searchViewModel = new SearchFilmViewModel(viewModel.Filmservice);
             InitializeComponent();
-            DataContext = viewModel;
         }
 
         private void FilmFormClick(object sender, RoutedEventArgs e)
         {
-            SearchFilms anotherWindow = new SearchFilms(viewModel.Filmservice.DataSource);
+            SearchFilms anotherWindow = new SearchFilms(searchViewModel);
             anotherWindow.Show();
 
             this.Close(); // при добавлении Просмотренного фильма закрываем окно с формой
 
+        }
+
+        private void InputTitle_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _searchString = (sender as TextBox)!.Text;
         }
     }
 }
