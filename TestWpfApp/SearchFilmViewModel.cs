@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TestWpfApp.Core;
 
 namespace TestWpfApp
@@ -24,6 +25,19 @@ namespace TestWpfApp
         }
 
 
+        // Следим какой фильм выбран
+        private Film _selectedFilm;
+        public Film SelectedFilm
+        {
+            get => _selectedFilm;
+            set
+            {
+                _selectedFilm = value;
+                OnPropertyChanged("SelectedFilm");
+            }
+        }
+
+
         // Связано с полем для ввода названия
         private string _inputTitle = string.Empty;
         public string InputTitle
@@ -39,6 +53,7 @@ namespace TestWpfApp
 
         public async Task Fetch()
         {
+            //MessageBox.Show($"Проверка: {_inputTitle}.");
             FilmList = new ObservableCollection<Film>(await filmservice.GetContent(_inputTitle));
         }
     }

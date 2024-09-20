@@ -75,7 +75,7 @@ namespace TestWpfApp
         {
             try
             {
-                bool result = await filmDataSource.AddWatchedFilm(1, 5);
+                bool result = await filmDataSource.AddWatchedFilm(viewModel.SelectedFilm.Id, 5);
 
                 if (result)
                 {

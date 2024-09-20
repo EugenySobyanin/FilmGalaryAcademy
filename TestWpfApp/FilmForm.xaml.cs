@@ -31,6 +31,7 @@ namespace TestWpfApp
         {
             this.viewModel = viewModel;
             searchViewModel = new SearchFilmViewModel(viewModel.Filmservice);
+            DataContext = searchViewModel;
             InitializeComponent();
         }
 

@@ -21,6 +21,7 @@
                 Height="20" 
                 x:Name="InputTitle"
                 TextChanged="InputTitle_TextChanged"
+                Text="{Binding InputTitle}"
             />
         </StackPanel>
         

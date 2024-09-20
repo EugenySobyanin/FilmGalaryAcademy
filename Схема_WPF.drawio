@@ -1,0 +1,139 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 YaBrowser/24.7.0.0 Safari/537.36" version="24.7.14">
+  <diagram name="Страница — 1" id="k5wXXst_LsQhryJj3VU3">
+    <mxGraphModel dx="1187" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-1" value="DataSource - FilmDataSource" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="240" height="214" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-2" value="Создается клиент, отправляются запросы к БД" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-1">
+          <mxGeometry y="26" width="240" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-19" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-1">
+          <mxGeometry y="80" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-3" value="GetFilmListWithSearch(string) (получение списка фильмов с параметром поиска&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-1">
+          <mxGeometry y="90" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-20" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-1">
+          <mxGeometry y="140" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-4" value="GetWatchedList ()(получение списка просмотренных фильмов)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-1">
+          <mxGeometry y="150" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-5" value="Service - FilmServiceDB" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="440" y="120" width="240" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-6" value="Принимает FilmDataSource" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-5">
+          <mxGeometry y="26" width="240" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-17" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-5">
+          <mxGeometry y="80" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-8" value="GetContent() (вызывает метод:)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-5">
+          <mxGeometry y="90" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-18" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-5">
+          <mxGeometry y="154" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-15" value="GetWatched() (вызывает метод:)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-5">
+          <mxGeometry y="164" width="240" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.012;entryY=0.055;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="C9ziROugf0Yx3_dF3d4_-6" target="C9ziROugf0Yx3_dF3d4_-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-10" value="ViewModel - MainViewModel" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="820" y="130" width="240" height="254" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-11" value="Принимает FilmServiceDB" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-10">
+          <mxGeometry y="26" width="240" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-22" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-10">
+          <mxGeometry y="80" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-12" value="FilmList -&amp;nbsp;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-10">
+          <mxGeometry y="90" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-23" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-10">
+          <mxGeometry y="150" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-13" value="Item 3" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-10">
+          <mxGeometry y="160" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-42" value="Item" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-10">
+          <mxGeometry y="224" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.011;entryY=0.053;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="C9ziROugf0Yx3_dF3d4_-11" target="C9ziROugf0Yx3_dF3d4_-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.001;entryY=0.302;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="C9ziROugf0Yx3_dF3d4_-8" target="C9ziROugf0Yx3_dF3d4_-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="C9ziROugf0Yx3_dF3d4_-15" target="C9ziROugf0Yx3_dF3d4_-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-24" value="MainWindow" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="240" height="224" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-25" value="Принимает FilmServiceDB" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-24">
+          <mxGeometry y="26" width="240" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-26" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-24">
+          <mxGeometry y="80" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-27" value="viewModel" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-24">
+          <mxGeometry y="90" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-28" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-24">
+          <mxGeometry y="150" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-29" value="AddFilmFormWindow() - при нажатии вызывает FilmForm" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-24">
+          <mxGeometry y="160" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-30" value="FilmForm" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="440" y="560" width="240" height="224" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-31" value="Принимает FilmServiceDB" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-30">
+          <mxGeometry y="26" width="240" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-32" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-30">
+          <mxGeometry y="80" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-33" value="Item 2" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-30">
+          <mxGeometry y="90" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-34" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-30">
+          <mxGeometry y="150" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-35" value="FilmFormClick() - при нажатии вызывает окно с найденными фильмами" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-30">
+          <mxGeometry y="160" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-36" value="SearchFilmsWindow" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="800" y="550" width="240" height="224" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-37" value="Принимает FilmServiceDB" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-36">
+          <mxGeometry y="26" width="240" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-38" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-36">
+          <mxGeometry y="80" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-39" value="Item 2" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-36">
+          <mxGeometry y="90" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-40" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-36">
+          <mxGeometry y="150" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-41" value="Item 3" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="C9ziROugf0Yx3_dF3d4_-36">
+          <mxGeometry y="160" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.006;entryY=0.051;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="C9ziROugf0Yx3_dF3d4_-29" target="C9ziROugf0Yx3_dF3d4_-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C9ziROugf0Yx3_dF3d4_-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.005;entryY=0.049;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="C9ziROugf0Yx3_dF3d4_-35" target="C9ziROugf0Yx3_dF3d4_-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
