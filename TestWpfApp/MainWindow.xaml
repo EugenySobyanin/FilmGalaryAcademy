@@ -128,6 +128,11 @@
                                                     <TextBlock FontSize="16" Text="{Binding UserRating}" Foreground="White" FontFamily="Verdana"/>
                                                 </StackPanel>
 
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="16" Text="Постер: " Foreground="White" FontFamily="Verdana"/>
+                                                    <Image Width="100" Height="150" Source="{Binding Path=Film.Poster}" Stretch="Uniform" />
+                                                </StackPanel>
+
                                             </StackPanel>
                                         </Expander>
                                     </DataTemplate>
