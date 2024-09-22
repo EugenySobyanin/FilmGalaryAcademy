@@ -6,23 +6,8 @@ namespace FilmGalary.Core.Entity
 {
     public class Film
     {
-        //public static int _id_counter = 0;
-
-        // конструктор
-        //public Film(string title = "Без названия", double rating = 0.0, int year = 0, double user_rating = 0.0, bool isWatched = true, bool isPlan = false)
-        //{
-        //    Id = _id_counter++;
-        //    Title = title;
-        //    Rating_kp = rating;
-        //    Release_year = year;
-        //    UserRating = user_rating;
-        //    IsWatched = isWatched;
-        //    InPlan = isPlan;
-        //}
-
-        // свойства
-        //[JsonProperty("ItemId")]
         public int Id { get; set; }
+        public string Description { get; set; }
         public string Title { get; set; }
         public double Rating_kp { get; set; }
         public double Rating_imdb { get; set; }
@@ -30,6 +15,7 @@ namespace FilmGalary.Core.Entity
         public string Type { get; set; }
         public double UserRating { get; set; }
 
+        public List<string> Country { get; set; }
         public List<Genre> Genre { get; set; }
         public List<Person> Person { get; set; }
 
@@ -45,6 +31,7 @@ namespace FilmGalary.Core.Entity
         }
 
     }
+
 
     public class Genre
     {
