@@ -76,10 +76,10 @@
                                                 </StackPanel>
                                             </Expander.Header>
                                             <StackPanel>
-                                                <StackPanel Orientation="Horizontal">
+                                                <!--<StackPanel Orientation="Horizontal">
                                                     <TextBlock FontSize="16" Text="Описание: " Foreground="White" FontFamily="Verdana"/>
                                                     <TextBlock FontSize="16" Text="{Binding Path=Film.Description}" Foreground="White" FontFamily="Verdana"/>
-                                                </StackPanel>
+                                                </StackPanel>-->
 
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock FontSize="16" Text="Рейтинг кинопоиска: " Foreground="White" FontFamily="Verdana"/>
