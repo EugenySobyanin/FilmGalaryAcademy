@@ -77,6 +77,7 @@ namespace TestWpfApp
             {
                 bool result = await filmDataSource.AddWatchedFilm(viewModel.SelectedFilm.Id, 5);
 
+
                 if (result)
                 {
                     MessageBox.Show("Фильм успешно добавлен в просмотренные! 🎉");

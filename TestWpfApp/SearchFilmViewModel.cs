@@ -54,7 +54,15 @@ namespace TestWpfApp
         public async Task Fetch()
         {
             //MessageBox.Show($"Проверка: {_inputTitle}.");
-            FilmList = new ObservableCollection<Film>(await filmservice.GetContent(_inputTitle));
+            if (_inputTitle == "")
+            {
+                FilmList = null;
+            }
+            else
+            {
+                FilmList = new ObservableCollection<Film>(await filmservice.GetContent(_inputTitle));
+            }
+            
         }
     }
 }

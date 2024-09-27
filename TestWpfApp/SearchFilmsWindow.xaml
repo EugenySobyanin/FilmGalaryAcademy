@@ -5,11 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWpfApp"
         mc:Ignorable="d"
-        Title="SearchFilms" Height="450" Width="800"
+        Title="SearchFilms" Height="800" Width="500"
+        x:Name="SearchFilmWindow"
         >
-    <Grid>
-        <Border>
-            <ListBox
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="0.125*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel 
+            Background="Black" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="5" 
+            Margin="10">
+            <TextBox 
+            Width="Auto"
+            Height="30">
+            </TextBox>
+        </StackPanel>
+    </Grid>
+
+    <!--<ListBox
             ItemsSource="{Binding FilmList}"
             SelectedItem="{Binding SelectedFilm}"
             Background="#828282"
@@ -20,34 +55,69 @@
                         <Expander>
                             <Expander.Header>
                                 <StackPanel Orientation="Horizontal">
-                                    <!--<TextBlock FontSize="26" Text="{Binding Id}" Foreground="Black" FontFamily="Verdana"/>-->
-                                    <TextBlock FontSize="26" Text="{Binding Title}" Foreground="Black" FontFamily="Verdana"/>
+                                    
+                                    <TextBlock TextWrapping="Wrap" FontSize="26" Text="{Binding Title}" Foreground="Black" FontFamily="Verdana"/>
                                 </StackPanel>
                             </Expander.Header>
                             <StackPanel>
+                                
+
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Рейтинг кинопоиска: "/>
-                                    <TextBlock FontSize="16" Text="{Binding Rating}"/>
+                                    <TextBlock FontSize="16" Text="Рейтинг кинопоиска: " Foreground="Black" FontFamily="Verdana"/>
+                                    <TextBlock FontSize="16" Text="{Binding Rating_kp}" Foreground="Black" FontFamily="Verdana"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Год выпуска: "/>
-                                    <TextBlock FontSize="16" Text="{Binding YearRelease}"/>
+                                    <TextBlock FontSize="16" Text="Рейтинг ImDb: " Foreground="Black" FontFamily="Verdana"/>
+                                    <TextBlock FontSize="16" Text="{Binding Rating_imdb}" Foreground="Black" FontFamily="Verdana"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Ваша оценка: "/>
-                                    <TextBlock FontSize="16" Text="{Binding UserRating}"/>
+                                    <TextBlock FontSize="16" Text="Год выпуска: " Foreground="Black" FontFamily="Verdana"/>
+                                    <TextBlock FontSize="16" Text="{Binding Release_year}" Foreground="Black" FontFamily="Verdana"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16" Text="Тип: " Foreground="Black" FontFamily="Verdana"/>
+                                    <TextBlock FontSize="16" Text="{Binding Type}" Foreground="Black" FontFamily="Verdana"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16" Text="Страна: " Foreground="Black" FontFamily="Verdana"/>
+                                    <ItemsControl ItemsSource="{Binding Country}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock FontSize="16" Text="{Binding}" Foreground="Black" FontFamily="Verdana"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16" Text="Жанры: " Foreground="Black" FontFamily="Verdana"/>
+                                    <ItemsControl ItemsSource="{Binding Genre}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock FontSize="16" Text="{Binding Name}" Foreground="Black" FontFamily="Verdana"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+
+                               
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="16" Text="Постер: " Foreground="Black" FontFamily="Verdana"/>
+                                    <Image Width="100" Height="150" Source="{Binding Poster}" Stretch="Uniform" />
                                 </StackPanel>
 
                             </StackPanel>
                         </Expander>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListBox>
+            </ListBox>-->
             
-        </Border>
-        <Button 
+        <!--<Button 
             x:Name="AddWatchedFilm" 
             Content="Добавить" 
             Height="50" 
@@ -60,7 +130,6 @@
             Background="#32CD32"
             FontSize="30"
             Click="SendPostRequest"
-/>
+/>-->
 
-    </Grid>
 </Window>

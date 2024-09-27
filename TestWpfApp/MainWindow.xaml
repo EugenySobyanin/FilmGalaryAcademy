@@ -29,130 +29,193 @@
             <ColumnDefinition/>
 
         </Grid.ColumnDefinitions>
+
+        <!--<StackPanel
+            Grid.Row="0"
+            Grid.Column="4"
+            Orientation="Horizontal"
+            HorizontalAlignment="Left"
+            
+            >
+            <TextBox 
+                Width="200"
+                Height="45"     
+                Margin="5" 
+                ToolTip="Введите название" 
+                x:Name="SearchTextBox2"
+                Foreground="Gray" 
+                FontFamily="Verdana" 
+                FontSize="16" 
+                />
+            <Button Content="Найти" 
+                Width="100" 
+                Margin="5" 
+                Background="Green" 
+                Foreground="White" 
+                FontFamily="Verdana" 
+                FontSize="16" 
+                />
+
+
+        </StackPanel>-->
         
         <!-- Главный StackPanel со всеми вкладками -->
         <StackPanel Grid.Row="0" 
                     Grid.Column="1" 
-                    Grid.RowSpan="8"
+                    Grid.RowSpan="7"
                     Grid.ColumnSpan="5"
                     Orientation="Horizontal" 
-                    HorizontalAlignment="Center" 
+                    HorizontalAlignment="Center"
                     >
             <!--Попытка получить активную вкладку  -->
             <TabControl  x:Name="tabControl" SelectedItem="{Binding SelectedTab}">
 
                 <!-- Вкладка для просмотренных фильмов -->
-            <TabItem x:Name="watchedTab"
-                         Background="#32CD32" 
-                         Margin="0 0 10 0"
-                         Width="200" 
-                         Height="50"
-                         >
+                <TabItem x:Name="watchedTab"
+             Background="#32CD32" 
+             Margin="0 0 10 0"
+             Width="250" 
+             Height="75"
+             >
 
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Ellipse Height="10" Width="10" Fill="Black" />
-                        <TextBlock Margin="3" FontSize="16" FontFamily="Roboto">Просмотренные</TextBlock>
-                    </StackPanel>
-                </TabItem.Header>
-                <TabItem.Content>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <!--<Ellipse Height="10" Width="10" Fill="Black" />-->
+                            <TextBlock Margin="3" FontSize="22" FontFamily="Lato" FontWeight="SemiBold">Просмотренные</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TabItem.Content>
                         <Border BorderBrush="Transparent" BorderThickness="0">
                             <!--<Border.BorderBrush>
-                            <SolidColorBrush Color="Black"/>
-                        </Border.BorderBrush>-->
+    <SolidColorBrush Color="Black"/>
+</Border.BorderBrush>-->
+                            <!--<StackPanel Orientation="Vertical" Background="Black">-->
+                                
+                                <!--<StackPanel Orientation="Horizontal" Background="Black">
+                                    <TextBox 
+                                        Width="500"
+                                        Height="45"     
+                                        Margin="5" 
+                                        ToolTip="Введите название" 
+                                        x:Name="SearchTextBox"
+                                        Foreground="Gray" 
+                                        FontFamily="Verdana" 
+                                        FontSize="16" 
+                                        />
+                                    <Button Content="Найти" 
+                        Width="100" 
+                        Margin="5" 
+                        Background="Green" 
+                        Foreground="White" 
+                        FontFamily="Verdana" 
+                        FontSize="16" 
+                        />
+                                </StackPanel>-->
+
+                            
                             <ListBox
-                            ItemsSource="{Binding FilmList}"
-                            SelectedItem="{Binding SelectedFilm}"
-                            Background="Black"
-                            BorderBrush="Black"
-                            >
+    ItemsSource="{Binding FilmList}"
+    SelectedItem="{Binding SelectedFilm}"
+    Background="Black"
+    BorderBrush="Black"
+    >
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <Expander>
                                             <Expander.Header>
                                                 <StackPanel Orientation="Horizontal">
                                                     <!--<TextBlock FontSize="26" Text="{Binding Path=Film.Id}" Foreground="White" FontFamily="Verdana"/>-->
-                                                    <TextBlock FontSize="26" Text="{Binding Path=Film.Title}" Foreground="White" FontFamily="Verdana"/>
+                                                    <TextBlock MaxWidth="400" TextWrapping="Wrap" FontSize="26" Text="{Binding Path=Film.Title}" Foreground="White" FontFamily="Verdana"/>
+                                                    <Image Width="150" Height="50" Source="{Binding Path=Film.Logo}" Stretch="Uniform"/>
                                                 </StackPanel>
                                             </Expander.Header>
-                                            <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <StackPanel >
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock FontSize="16" Text="Рейтинг кинопоиска: " Foreground="White" FontFamily="Verdana"/>
+                                                        <TextBlock FontSize="16" Text="{Binding Path=Film.Rating_kp}" Foreground="White" FontFamily="Verdana"/>
+                                                    </StackPanel>
+
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock FontSize="16" Text="Рейтинг ImDb: " Foreground="White" FontFamily="Verdana"/>
+                                                        <TextBlock FontSize="16" Text="{Binding Path=Film.Rating_imdb}" Foreground="White" FontFamily="Verdana"/>
+                                                    </StackPanel>
+
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock FontSize="16" Text="Год выпуска: " Foreground="White" FontFamily="Verdana"/>
+                                                        <TextBlock FontSize="16" Text="{Binding Path=Film.Release_year}" Foreground="White" FontFamily="Verdana"/>
+                                                    </StackPanel>
+
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock FontSize="16" Text="Тип: " Foreground="White" FontFamily="Verdana"/>
+                                                        <TextBlock FontSize="16" Text="{Binding Path=Film.Type}" Foreground="White" FontFamily="Verdana"/>
+                                                    </StackPanel>
+
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock FontSize="16" Text="Страна: " Foreground="White" FontFamily="Verdana"/>
+                                                        <ItemsControl ItemsSource="{Binding Path=Film.Country}">
+                                                            <ItemsControl.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock FontSize="16" Text="{Binding}" Foreground="White" FontFamily="Verdana"/>
+                                                                </DataTemplate>
+                                                            </ItemsControl.ItemTemplate>
+                                                        </ItemsControl>
+                                                    </StackPanel>
+
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock FontSize="16" Text="Жанры: " Foreground="White" FontFamily="Verdana"/>
+                                                        <ItemsControl ItemsSource="{Binding Path=Film.Genre}">
+                                                            <ItemsControl.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock FontSize="16" Text="{Binding Name}" Foreground="White" FontFamily="Verdana"/>
+                                                                </DataTemplate>
+                                                            </ItemsControl.ItemTemplate>
+                                                        </ItemsControl>
+                                                    </StackPanel>
+
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock FontSize="16" Text="Ваша оценка: " Foreground="White" FontFamily="Verdana"/>
+                                                        <TextBlock FontSize="16" Text="{Binding UserRating}" Foreground="White" FontFamily="Verdana"/>
+                                                    </StackPanel>
+                                                </StackPanel>
                                                 <!--<StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Описание: " Foreground="White" FontFamily="Verdana"/>
-                                                    <TextBlock FontSize="16" Text="{Binding Path=Film.Description}" Foreground="White" FontFamily="Verdana"/>
-                                                </StackPanel>-->
+                            <TextBlock FontSize="16" Text="Описание: " Foreground="White" FontFamily="Verdana"/>
+                            <TextBlock FontSize="16" Text="{Binding Path=Film.Description}" Foreground="White" FontFamily="Verdana"/>
+                        </StackPanel>-->
+
+
 
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Рейтинг кинопоиска: " Foreground="White" FontFamily="Verdana"/>
-                                                    <TextBlock FontSize="16" Text="{Binding Path=Film.Rating_kp}" Foreground="White" FontFamily="Verdana"/>
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Рейтинг ImDb: " Foreground="White" FontFamily="Verdana"/>
-                                                    <TextBlock FontSize="16" Text="{Binding Path=Film.Rating_imdb}" Foreground="White" FontFamily="Verdana"/>
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Год выпуска: " Foreground="White" FontFamily="Verdana"/>
-                                                    <TextBlock FontSize="16" Text="{Binding Path=Film.Release_year}" Foreground="White" FontFamily="Verdana"/>
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Тип: " Foreground="White" FontFamily="Verdana"/>
-                                                    <TextBlock FontSize="16" Text="{Binding Path=Film.Type}" Foreground="White" FontFamily="Verdana"/>
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Страна: " Foreground="White" FontFamily="Verdana"/>
-                                                    <ItemsControl ItemsSource="{Binding Path=Film.Country}">
-                                                        <ItemsControl.ItemTemplate>
-                                                            <DataTemplate>
-                                                                <TextBlock FontSize="16" Text="{Binding}" Foreground="White" FontFamily="Verdana"/>
-                                                            </DataTemplate>
-                                                        </ItemsControl.ItemTemplate>
-                                                    </ItemsControl>
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Жанры: " Foreground="White" FontFamily="Verdana"/>
-                                                    <ItemsControl ItemsSource="{Binding Path=Film.Genre}">
-                                                        <ItemsControl.ItemTemplate>
-                                                            <DataTemplate>
-                                                                <TextBlock FontSize="16" Text="{Binding Name}" Foreground="White" FontFamily="Verdana"/>
-                                                            </DataTemplate>
-                                                        </ItemsControl.ItemTemplate>
-                                                    </ItemsControl>
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Ваша оценка: " Foreground="White" FontFamily="Verdana"/>
-                                                    <TextBlock FontSize="16" Text="{Binding UserRating}" Foreground="White" FontFamily="Verdana"/>
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock FontSize="16" Text="Постер: " Foreground="White" FontFamily="Verdana"/>
-                                                    <Image Width="100" Height="150" Source="{Binding Path=Film.Poster}" Stretch="Uniform" />
+                                                    <!--<TextBlock FontSize="16" Text="Постер: " Foreground="White" FontFamily="Verdana"/>-->
+                                                    <Image Width="200" Height="250" Source="{Binding Path=Film.Poster}" Stretch="Uniform" />
                                                 </StackPanel>
 
                                             </StackPanel>
                                         </Expander>
+
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>
+                            <!--</StackPanel>-->
                         </Border>
                     </TabItem.Content>
-            </TabItem>
 
-            <!-- Вкладка для планируемых фильмов -->
+
+                </TabItem>
+
+
+
+                <!-- Вкладка для планируемых фильмов -->
             <TabItem x:Name="planTab"
                     Background="#32CD32" 
                     Margin="0 0 10 0"
-                    Width="200" 
-                    Height="50"
+                    Width="250" 
+                    Height="75"
                 >
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse Height="10" Width="10" Fill="Black" />
-                        <TextBlock Margin="3" FontSize="16" FontFamily="Roboto">Планируемые</TextBlock>
+                        <!--<Ellipse Height="10" Width="10" Fill="Black" />-->
+                            <TextBlock Margin="3" FontSize="22" FontFamily="Lato" FontWeight="SemiBold">Планируемые</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
@@ -202,11 +265,11 @@
             </TabItem>
 
 
-            <TabItem x:Name="recomendationTab" Width="200" Height="50" Background="#32CD32" Margin="0 0 0 0">
+            <TabItem x:Name="recomendationTab" Width="250" Height="75" Background="#32CD32" Margin="0 0 0 0">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse Height="10" Width="10" Fill="Black" />
-                        <TextBlock Margin="3" FontSize="14">Рекомендации</TextBlock>
+                        <!--<Ellipse Height="10" Width="10" Fill="Black" />-->
+                            <TextBlock Margin="3" FontSize="22" FontFamily="Lato" FontWeight="SemiBold">Рекомендации</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>

@@ -15,6 +15,7 @@ namespace FilmGalary.Core.Entity
         public string Type { get; set; }
         public double UserRating { get; set; }
         public string Poster { get; set; }
+        public string Logo { get; set; }
 
         public List<string> Country { get; set; }
         public List<Genre> Genre { get; set; }
