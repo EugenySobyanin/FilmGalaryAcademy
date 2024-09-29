@@ -71,6 +71,11 @@ namespace TestWpfApp
             InitializeComponent();
         }
 
+        private void FindButtonClick(object sender, RoutedEventArgs e)
+        {
+            viewModel.Fetch();
+        }
+
         private async void SendPostRequest(object sender, RoutedEventArgs e)
         {
             try

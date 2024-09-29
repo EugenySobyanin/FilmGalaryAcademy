@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWpfApp"
         mc:Ignorable="d"
-        Title="SearchFilms" Height="800" Width="500"
+        Title="SearchFilms" Height="800" Width="525"
         x:Name="SearchFilmWindow"
         >
     <Grid Background="Black">
@@ -35,16 +35,36 @@
             Background="Black" 
             Grid.Row="0" 
             Grid.Column="0" 
-            Grid.ColumnSpan="5" 
+            Grid.ColumnSpan="7"
+            Grid.RowSpan="7" 
             Margin="10">
-            <TextBox 
-            Width="Auto"
-            Height="30">
-            </TextBox>
-        </StackPanel>
-    </Grid>
-
-    <!--<ListBox
+            <TextBlock 
+                Text="Поиск по ключевым словам" 
+                Foreground="White" 
+                FontSize="14" 
+                FontFamily="Verdana" 
+                Margin="0 0 0 5"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox
+                    x:Name="InputTitle"
+                    Width="400"
+                    Height="30"
+                    FontSize="16"
+                    FontFamily="Verdana"
+                    Text="{Binding InputTitle}"
+                    />
+                <Button 
+                    Content="Найти" 
+                    Width="80" 
+                    Height="30" 
+                    FontSize="16" 
+                    FontFamily="Verdana" 
+                    Background="#32CD32"
+                    Foreground="Black" 
+                    Margin="5,0,0,0"
+                    Click="FindButtonClick"/>
+            </StackPanel>
+            <ListBox
             ItemsSource="{Binding FilmList}"
             SelectedItem="{Binding SelectedFilm}"
             Background="#828282"
@@ -55,12 +75,12 @@
                         <Expander>
                             <Expander.Header>
                                 <StackPanel Orientation="Horizontal">
-                                    
+
                                     <TextBlock TextWrapping="Wrap" FontSize="26" Text="{Binding Title}" Foreground="Black" FontFamily="Verdana"/>
                                 </StackPanel>
                             </Expander.Header>
                             <StackPanel>
-                                
+
 
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16" Text="Рейтинг кинопоиска: " Foreground="Black" FontFamily="Verdana"/>
@@ -104,7 +124,7 @@
                                     </ItemsControl>
                                 </StackPanel>
 
-                               
+
 
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="16" Text="Постер: " Foreground="Black" FontFamily="Verdana"/>
@@ -115,7 +135,11 @@
                         </Expander>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListBox>-->
+            </ListBox>
+        </StackPanel>
+    </Grid>
+
+    
             
         <!--<Button 
             x:Name="AddWatchedFilm" 

@@ -279,7 +279,7 @@
         </TabControl>
         </StackPanel>
         <Button 
-            x:Name="AddFormFilm" 
+            x:Name="AddFilm" 
             Content="Добавить фильм" 
             Height="50" 
             Width="400"
@@ -290,7 +290,7 @@
             Margin="57,14,57,15"
             Background="#32CD32"
             FontSize="30"
-            Click="AddFilmFormWindow"
+            Click="AddSearchWindow"
             />
 
         <Button 
@@ -303,7 +303,7 @@
             Grid.ColumnSpan="3"
             HorizontalContentAlignment="Center"
             Margin="57,14,57,15"
-            Background="#33CEC3"
+            Background="#32CD32"
             FontSize="30"
             
             />

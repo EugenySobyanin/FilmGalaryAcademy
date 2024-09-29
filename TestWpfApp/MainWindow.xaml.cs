@@ -30,6 +30,7 @@ namespace TestWpfApp
         private MainViewModel viewModel = new MainViewModel(new FilmServiceDB(new FilmDataSource()));
         private static FilmForm filmFormWindow;
         private static FilmFormPlan filmFormPlanWindow;
+        private static SearchFilms searchFilmsWindow;
 
 
         public MainWindow()
@@ -40,7 +41,7 @@ namespace TestWpfApp
   
         }
 
-        private void AddFilmFormWindow(object sender, RoutedEventArgs e)
+        private void AddSearchWindow(object sender, RoutedEventArgs e)
         {
             // Получаем текущий выбранный TabItem
             var selectedTab = tabControl.SelectedItem as TabItem;
@@ -54,29 +55,33 @@ namespace TestWpfApp
             //Console.WriteLine(selectedTab.Header.ToString());
             //Debug.WriteLine("Все норм.");
 
-            if (selectedTab.Name.ToString() == "watchedTab")
-            {
-                if (filmFormPlanWindow != null) 
-                {  
-                    filmFormPlanWindow.Close(); 
-                }
-                viewModel.IsWatchedAdd = true;
-                viewModel.InPlanAdd = false;
-                filmFormWindow = new FilmForm(viewModel);
-                filmFormWindow.Show();
-                
-            }
-            else if (selectedTab.Name.ToString() == "planTab")
-            {
-                if (filmFormWindow != null)
-                {
-                    filmFormWindow.Close();
-                }
-                viewModel.IsWatchedAdd = false;
-                viewModel.InPlanAdd = true;
-                filmFormPlanWindow = new FilmFormPlan(viewModel);
-                filmFormPlanWindow.Show();
-            }
+            //if (selectedTab.Name.ToString() == "watchedTab")
+            //{
+            //    if (filmFormPlanWindow != null) 
+            //    {  
+            //        filmFormPlanWindow.Close(); 
+            //    }
+            //    viewModel.IsWatchedAdd = true;
+            //    viewModel.InPlanAdd = false;
+            //    filmFormWindow = new FilmForm(viewModel);
+            //    filmFormWindow.Show();
+
+            //}
+            //else if (selectedTab.Name.ToString() == "planTab")
+            //{
+            //    if (filmFormWindow != null)
+            //     filmFormPlanWindow = new FilmFormPlan(viewModel);
+            //    filmFormPlanWindow.Show();
+            //}  {
+            //        filmFormWindow.Close();
+            //    }
+            //    viewModel.IsWatchedAdd = false;
+            //    viewModel.InPlanAdd = true;
+
+
+            searchFilmsWindow = new SearchFilms(new SearchFilmViewModel(viewModel.Filmservice));
+            searchFilmsWindow.Show();
+             
 
         }
     }
