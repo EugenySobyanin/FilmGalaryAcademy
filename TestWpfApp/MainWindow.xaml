@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:TestWpfApp"
         mc:Ignorable="d"
         Title="Тестовый вариант приложения" Height="800" Width="1200" WindowState="Maximized">
+
+    <Window.Resources>
+        <BlurEffect x:Key="BlurEffect" Radius="10" />
+    </Window.Resources>
+    
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.125*"/>
@@ -125,8 +130,8 @@
                                             <Expander.Header>
                                                 <StackPanel Orientation="Horizontal">
                                                     <!--<TextBlock FontSize="26" Text="{Binding Path=Film.Id}" Foreground="White" FontFamily="Verdana"/>-->
-                                                    <TextBlock MaxWidth="400" TextWrapping="Wrap" FontSize="26" Text="{Binding Path=Film.Title}" Foreground="White" FontFamily="Verdana"/>
-                                                    <Image Width="150" Height="50" Source="{Binding Path=Film.Logo}" Stretch="Uniform"/>
+                                                    <TextBlock MaxWidth="400" TextWrapping="Wrap" FontSize="20" Text="{Binding Path=Film.Title}" Foreground="White" FontFamily="Verdana" VerticalAlignment="Center"/>
+                                                    <Image Width="150" Height="50" Source="{Binding Path=Film.Logo}" Stretch="Uniform" HorizontalAlignment="Right"/>
                                                 </StackPanel>
                                             </Expander.Header>
                                             <StackPanel Orientation="Horizontal">
@@ -281,13 +286,15 @@
         <Button 
             x:Name="AddFilm" 
             Content="Добавить фильм" 
-            Height="50" 
+            Height="70" 
             Width="400"
-            Grid.Row="8"
+            Grid.Row="7"
+            Grid.RowSpan="8"
             Grid.Column="2"
             Grid.ColumnSpan="3"
+            VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
-            Margin="57,14,57,15"
+            Margin="57,30,57,15"
             Background="#32CD32"
             FontSize="30"
             Click="AddSearchWindow"
@@ -296,13 +303,14 @@
         <Button 
             x:Name="DeleteFilm" 
             Content="Удалить фильм" 
-            Height="50" 
+            Height="70" 
             Width="400"
-            Grid.Row="9"
+            Grid.Row="8"
+            Grid.RowSpan="9"
             Grid.Column="2"
             Grid.ColumnSpan="3"
             HorizontalContentAlignment="Center"
-            Margin="57,14,57,15"
+            Margin="57,30,57,15"
             Background="#32CD32"
             FontSize="30"
             

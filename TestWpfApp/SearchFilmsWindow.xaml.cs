@@ -60,12 +60,14 @@ namespace TestWpfApp
     {
         private FilmDataSource filmDataSource;
         private SearchFilmViewModel viewModel;
+        private MainViewModel mainViewModel;
 
         // Конструктор
-        public SearchFilms(SearchFilmViewModel vm)
+        public SearchFilms(SearchFilmViewModel vm, MainViewModel vm_main)
         {
             filmDataSource = vm.filmservice.DataSource;
             viewModel = vm; // Передача его в viewModel
+            mainViewModel = vm_main;
             viewModel.Fetch();
             DataContext = viewModel;
             InitializeComponent();
@@ -74,6 +76,8 @@ namespace TestWpfApp
         private void FindButtonClick(object sender, RoutedEventArgs e)
         {
             viewModel.Fetch();
+            viewModel.InputTitle = "";
+            mainViewModel.UpdateWatched();
         }
 
         private async void SendPostRequest(object sender, RoutedEventArgs e)
@@ -81,6 +85,7 @@ namespace TestWpfApp
             try
             {
                 bool result = await filmDataSource.AddWatchedFilm(viewModel.SelectedFilm.Id, 5);
+
 
 
                 if (result)

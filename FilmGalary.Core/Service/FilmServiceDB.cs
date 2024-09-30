@@ -36,6 +36,8 @@ namespace FilmGalary.Core.Service
             return await DataSource.GetWatchedList();
         }
 
+        // метод для удаления просмотренного фильма
+
 
     }
 }

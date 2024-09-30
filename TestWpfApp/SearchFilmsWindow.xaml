@@ -19,7 +19,8 @@
             <RowDefinition Height="0.125*"/>
             <RowDefinition Height="0.125*"/>
             <RowDefinition Height="0.125*"/>
-            <RowDefinition Height="0.125*"/>
+            <RowDefinition Height="Auto"/>
+            <!-- Изменено для кнопки "Добавить" -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -32,128 +33,151 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel 
-            Background="Black" 
-            Grid.Row="0" 
-            Grid.Column="0" 
-            Grid.ColumnSpan="7"
-            Grid.RowSpan="7" 
-            Margin="10">
+        Background="Black" 
+        Grid.Row="0" 
+        Grid.Column="0" 
+        Grid.ColumnSpan="7"
+        Grid.RowSpan="7" 
+        Margin="10">
             <TextBlock 
-                Text="Поиск по ключевым словам" 
-                Foreground="White" 
-                FontSize="14" 
-                FontFamily="Verdana" 
-                Margin="0 0 0 5"/>
+            Text="Поиск по ключевым словам" 
+            Foreground="White" 
+            FontSize="14" 
+            FontFamily="Verdana" 
+            Margin="0 0 0 5"/>
             <StackPanel Orientation="Horizontal">
                 <TextBox
-                    x:Name="InputTitle"
-                    Width="400"
-                    Height="30"
-                    FontSize="16"
-                    FontFamily="Verdana"
-                    Text="{Binding InputTitle}"
-                    />
+                x:Name="InputTitle"
+                Width="400"
+                Height="30"
+                FontSize="16"
+                FontFamily="Verdana"
+                Text="{Binding InputTitle}"
+                />
                 <Button 
-                    Content="Найти" 
-                    Width="80" 
-                    Height="30" 
-                    FontSize="16" 
-                    FontFamily="Verdana" 
-                    Background="#32CD32"
-                    Foreground="Black" 
-                    Margin="5,0,0,0"
-                    Click="FindButtonClick"/>
+                Content="Найти" 
+                Width="80" 
+                Height="30" 
+                FontSize="16" 
+                FontFamily="Verdana" 
+                Background="#32CD32"
+                Foreground="Black" 
+                Margin="5,0,0,0"
+                Click="FindButtonClick"/>
             </StackPanel>
-            <ListBox
-            ItemsSource="{Binding FilmList}"
-            SelectedItem="{Binding SelectedFilm}"
-            Background="#828282"
-            Opacity="0.8"
->
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Expander>
-                            <Expander.Header>
-                                <StackPanel Orientation="Horizontal">
 
-                                    <TextBlock TextWrapping="Wrap" FontSize="26" Text="{Binding Title}" Foreground="Black" FontFamily="Verdana"/>
-                                </StackPanel>
-                            </Expander.Header>
-                            <StackPanel>
-
-
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Рейтинг кинопоиска: " Foreground="Black" FontFamily="Verdana"/>
-                                    <TextBlock FontSize="16" Text="{Binding Rating_kp}" Foreground="Black" FontFamily="Verdana"/>
-                                </StackPanel>
-
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Рейтинг ImDb: " Foreground="Black" FontFamily="Verdana"/>
-                                    <TextBlock FontSize="16" Text="{Binding Rating_imdb}" Foreground="Black" FontFamily="Verdana"/>
-                                </StackPanel>
-
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Год выпуска: " Foreground="Black" FontFamily="Verdana"/>
-                                    <TextBlock FontSize="16" Text="{Binding Release_year}" Foreground="Black" FontFamily="Verdana"/>
-                                </StackPanel>
-
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Тип: " Foreground="Black" FontFamily="Verdana"/>
-                                    <TextBlock FontSize="16" Text="{Binding Type}" Foreground="Black" FontFamily="Verdana"/>
-                                </StackPanel>
-
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Страна: " Foreground="Black" FontFamily="Verdana"/>
-                                    <ItemsControl ItemsSource="{Binding Country}">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <TextBlock FontSize="16" Text="{Binding}" Foreground="Black" FontFamily="Verdana"/>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </StackPanel>
-
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Жанры: " Foreground="Black" FontFamily="Verdana"/>
-                                    <ItemsControl ItemsSource="{Binding Genre}">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <TextBlock FontSize="16" Text="{Binding Name}" Foreground="Black" FontFamily="Verdana"/>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </StackPanel>
-
-
-
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="16" Text="Постер: " Foreground="Black" FontFamily="Verdana"/>
-                                    <Image Width="100" Height="150" Source="{Binding Poster}" Stretch="Uniform" />
-                                </StackPanel>
-
-                            </StackPanel>
-                        </Expander>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
         </StackPanel>
-    </Grid>
 
-    
-            
-        <!--<Button 
-            x:Name="AddWatchedFilm" 
-            Content="Добавить" 
-            Height="50" 
-            Width="400"
+        <ListBox
+        Grid.Row="1"
+        Grid.RowSpan="7"
+        Grid.Column="0"
+        Grid.ColumnSpan="7"
+        ItemsSource="{Binding FilmList}"
+        SelectedItem="{Binding SelectedFilm}"
+        Background="Black"
+        Opacity="0.8">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Expander>
+                        <Expander.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock TextWrapping="Wrap" FontSize="16" Text="{Binding Title}" Foreground="White" FontFamily="Verdana"/>
+                            </StackPanel>
+                        </Expander.Header>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="14" Text="Рейтинг кинопоиска: " Foreground="White" FontFamily="Verdana"/>
+                                <TextBlock FontSize="14" Text="{Binding Rating_kp}" Foreground="White" FontFamily="Verdana"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="14" Text="Рейтинг ImDb: " Foreground="White" FontFamily="Verdana"/>
+                                <TextBlock FontSize="14" Text="{Binding Rating_imdb}" Foreground="White" FontFamily="Verdana"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="14" Text="Год выпуска: " Foreground="White" FontFamily="Verdana"/>
+                                <TextBlock FontSize="14" Text="{Binding Release_year}" Foreground="White" FontFamily="Verdana"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="14" Text="Тип: " Foreground="White" FontFamily="Verdana"/>
+                                <TextBlock FontSize="14" Text="{Binding Type}" Foreground="White" FontFamily="Verdana"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="14" Text="Страна: " Foreground="White" FontFamily="Verdana"/>
+                                <ItemsControl ItemsSource="{Binding Country}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock FontSize="14" Text="{Binding}" Foreground="White" FontFamily="Verdana"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="14" Text="Жанры: " Foreground="White" FontFamily="Verdana"/>
+                                <ItemsControl ItemsSource="{Binding Genre}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock FontSize="14" Text="{Binding Name}" Foreground="White" FontFamily="Verdana"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="14" Text="Постер: " Foreground="White" FontFamily="Verdana"/>
+                                <Image Width="100" Height="150" Source="{Binding Poster}" Stretch="Uniform" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Expander>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Кнопка "Добавить" -->
+
+            <Button
             Grid.Row="8"
-            Grid.Column="2"
-            Grid.ColumnSpan="3"
-            HorizontalContentAlignment="Center"
-            Margin="57,14,57,15"
-            Background="#32CD32"
-            FontSize="30"
-            Click="SendPostRequest"
-/>-->
+            Grid.RowSpan="9"
+            Grid.Column="0"
+            Grid.ColumnSpan="7"
+            HorizontalAlignment="Center"
+            Content="Добавить" 
+            Width="150" 
+            Height="60" 
+            FontSize="16" 
+            FontFamily="Verdana" 
+            Background="#32CD32" 
+            Foreground="Black" 
+            Margin="5"
+            Click="SendPostRequest"/>
+
+
+        
+
+    </Grid>
+    <!--<Button 
+    x:Name="AddWatchedFilm" 
+    Content="Добавить" 
+    Height="50" 
+    Width="400"
+    Grid.Row="8"
+    Grid.Column="2"
+    Grid.ColumnSpan="3"
+    HorizontalContentAlignment="Center"
+    Margin="57,14,57,15"
+    Background="#32CD32"
+    FontSize="30"
+    --><!--Click="SendPostRequest"--><!--
+        />-->
+
+
+
+
 
 </Window>

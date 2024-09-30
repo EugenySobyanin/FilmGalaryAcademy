@@ -14,6 +14,7 @@ using FilmGalary.Core.Data;
 using FilmGalary.Core.Service;
 using System.Data.Common;
 using System.Diagnostics;
+using System.Windows.Media.Effects;
 
 
 
@@ -28,6 +29,10 @@ namespace TestWpfApp
         
         // Здесь создается экземпляр Main
         private MainViewModel viewModel = new MainViewModel(new FilmServiceDB(new FilmDataSource()));
+        //public MainViewModel ViewModel
+        //{
+        //    get { return viewModel; }
+        //}
         private static FilmForm filmFormWindow;
         private static FilmFormPlan filmFormPlanWindow;
         private static SearchFilms searchFilmsWindow;
@@ -78,10 +83,11 @@ namespace TestWpfApp
             //    viewModel.IsWatchedAdd = false;
             //    viewModel.InPlanAdd = true;
 
+            this.Effect = (BlurEffect)FindResource("BlurEffect");
+            searchFilmsWindow = new SearchFilms(new SearchFilmViewModel(viewModel.Filmservice), this.viewModel);
+            searchFilmsWindow.ShowDialog();
+            this.Effect = null;
 
-            searchFilmsWindow = new SearchFilms(new SearchFilmViewModel(viewModel.Filmservice));
-            searchFilmsWindow.Show();
-             
 
         }
     }

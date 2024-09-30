@@ -153,6 +153,11 @@ namespace TestWpfApp
             //FilmListPlan = new ObservableCollection<Film>(filmservice.GetPlan());
         }
 
+        public void UpdateWatched()
+        {
+            Task.Run(() => Init()).Wait();
+        }
+
         //private RelayCommand addCommand;
         //public RelayCommand AddCommand
         //{
